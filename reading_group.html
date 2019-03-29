@@ -1,0 +1,80 @@
+---
+title: Reading Group
+---
+{% capture template_content %}
+  <section>
+      {% include frags/section_header.html title="Reading Group" %}
+      <p>
+      This page is dedicated to the NLP reading group @ Université de Lorraine.
+      </p>
+      {% capture sessiondate %}
+        {{"February 14, 2019" | date: "%b %d, %y" }}
+      {% endcapture %}
+      {% capture supcontent %}
+        <p>
+            A recent advance in the field of word embeddings is the rise of
+            contextualized embeddings. This first session of the reading group
+            was dedicated to one of the most popular contextual embedding
+            architecture, BERT.
+        </p>
+        <p>
+            BERT is also related to the
+            <a href="https://arxiv.org/abs/1706.03762" >Transformer architecture
+            of Vaswani and colleagues </a>. See also the
+            <a href="https://arxiv.org/pdf/1901.02860.pdf"> Transformer-XL of
+            Dai and al</a>.
+            <a href="https://github.com/huggingface/pytorch-pretrained-BERT">
+            Here</a>'s a github of variations on the Transformer.
+        </p>
+      {% endcapture %}
+      {% include reading_group/reading_group_session.html
+          date=sessiondate
+          speaker="Timothee Mickus"
+          paper="BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
+          paper_link="https://arxiv.org/pdf/1810.04805.pdf"
+          slides_link="reading_group/slides/tmickus_1402.pdf"
+          slides_downloadable=true
+          supplementary_content=supcontent
+      %}
+
+      {% capture sessiondate %}
+        {{"February 28, 2019" | date: "%b %d, %y" }}
+      {% endcapture %}
+      {% capture supcontent %}
+        <p>
+            Sentence embeddings have been a focus of research over the past few
+            years, with new algorithms, datasets and benchmarks. The paper for
+            this second session takes a step back and tries to evaluate how much
+            these sentence embeddings actually gain over random methods.
+        </p>
+      {% endcapture %}
+      {% include reading_group/reading_group_session.html
+          date=sessiondate
+          speaker="Timothee Mickus"
+          paper="No Training Required: Exploring Random Encoders for Sentence Classification"
+          paper_link="https://arxiv.org/pdf/1901.10444.pdf"
+          slides_link="reading_group/slides/tmickus_2802.pdf"
+          slides_downloadable=true
+          supplementary_content=supcontent
+      %}
+      {% capture sessiondate %}
+        {{"March 14, 2019" | date: "%b %d, %y" }}
+      {% endcapture %}
+      {% include reading_group/reading_group_session.html
+          date=sessiondate
+          speaker="Angela Fan"
+          paper="Sharp Nearby, Fuzzy Far Away: How Neural Language Models Use Context"
+          paper_link="https://nlp.stanford.edu/pubs/khandelwal2018lm.pdf"
+      %}
+      {% capture sessiondate %}
+        {{"March 28, 2019" | date: "%b %d, %y" }}
+      {% endcapture %}
+      {% include reading_group/reading_group_session.html
+          date=sessiondate
+          speaker="Hoa Le"
+          paper="Encoding Sentences with Graph Convolutional Networks for Semantic Role Labeling"
+          paper_link="https://www.aclweb.org/anthology/D17-1159"
+      %}
+  </section>
+{% endcapture %}
+{% include frags/template.html template_content=template_content %}

@@ -1,0 +1,41 @@
+<section>
+  {% capture sectiontitle %}
+    {% if include.date %}
+        Session of {{ include.date }}
+    {% else %}
+        Session
+    {% endif %}
+  {% endcapture %}
+  {% include frags/section_header.html title=sectiontitle  %}
+
+
+  <section class="meta-readinggroup" >
+    <table>
+      <tbody>
+
+        {% include frags/row.html header="Date" data=include.date %}
+        {% include frags/row.html header="Presented by" data=include.speaker %}
+        {% include frags/row.html header="Paper presented" data=include.paper %}
+        {% if include.paper_link %}
+          {% capture link %}
+            <a href="{{ include.paper_link }}">link</a>
+          {% endcapture %}
+          {% include frags/row.html header="Link to paper" data=link %}
+        {% endif %}
+        {% if include.slides_link %}
+          {% capture link %}
+            <a href="{{ include.slides_link }}" {% if include.slides_downloadable %} download {% endif %}>link</a>
+          {% endcapture %}
+          {% if include.slides_downloadable %}
+            {% include frags/row.html header="Download slides" data=link %}
+          {% else %}
+            {% include frags/row.html header="Link to slides" data=link %}
+          {% endif %}
+        {% endif %}
+      </tbody>
+    </table>
+    {% if include.supplementary_content %}
+      {{ include.supplementary_content }}
+    {% endif %}
+  </section>
+</section>

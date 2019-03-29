@@ -1,0 +1,24 @@
+nav, main {
+	float: left;
+	height: 100%;
+	display: inline-flex;
+	padding-right: 2ex;
+	padding-left: 2ex;
+}
+
+nav {
+
+	height: 100%;
+	max-width: 50ex;
+	width:10%;
+}
+
+main {
+	width:80%;
+	max-width:800px;
+}
+
+section.meta-readinggroup > table th {
+		padding-left: 1ex;
+		padding-right: 1ex;
+}
