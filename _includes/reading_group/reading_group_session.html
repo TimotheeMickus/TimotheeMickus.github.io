@@ -1,7 +1,7 @@
 <section>
   {% capture sectiontitle %}
     {% if include.date %}
-        Session of {{ include.date }}
+        <a class="reading-group-session-header" for-session="{{ include.date | date: "%b%d%Y"}}" >Session of {{ include.date }}</a>
     {% else %}
         Session
     {% endif %}
@@ -9,7 +9,7 @@
   {% include frags/section_header.html title=sectiontitle  %}
 
 
-  <section class="meta-readinggroup" >
+  <section class="reading-group-session {{ include.date | date: "%b%d%Y"}}" >
     <table>
       <tbody>
 

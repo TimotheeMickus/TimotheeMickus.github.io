@@ -18,7 +18,35 @@ main {
 	max-width:800px;
 }
 
-section.meta-readinggroup > table th {
+section.reading-group-session > table th {
 		padding-left: 1ex;
 		padding-right: 1ex;
+}
+
+section.reading-group {
+	height: 90vh;
+	max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+section.reading-group > div.container {
+	overflow-y: auto;
+}
+
+section.reading-group-session.hidden-session {
+	display:none;
+}
+table.reading-group-session-commands {
+	float:right;
+	width:auto;
+}
+table.reading-group-session-commands tbody td a {
+	font-size: smaller;
+	font-style: italic;
+	text-decoration: underline dashed;
+}
+div.commands-container {
+	width:100%;
 }

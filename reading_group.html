@@ -2,23 +2,38 @@
 title: Reading Group
 ---
 {% capture template_content %}
-  <section>
-      {% include frags/section_header.html title="Reading Group" %}
-      <p>
-        This page is dedicated to the NLP reading group @ Université de Lorraine.
-        Meetings are scheduled every other Thursday.
-      </p>
-      <p>
-        This reading group is a spiritual child of last year's reading group,
-        organized by Hoa Le You can find all the relevant information on that
-        previous reading group <a href="https://github.com/lethienhoa/Deep-Learning-and-Natural-Language-Understanding-Reading-Group" >
-        here</a>.
-      </p>
-      <p>
-        One of the goals of this reading group is to provide a space dedicated to
-        discussion for the different NLP labs across Nancy (Synalp, Atilf, ...).
-        To that end, we try to make the presentations as inclusive as possible.
-      </p>
+  <section class="reading-group">
+    {% include frags/section_header.html title="Reading Group" %}
+    <p>
+      This page is dedicated to the NLP reading group @ Université de Lorraine.
+      Meetings are scheduled every other Thursday.
+    </p>
+    <p>
+      This reading group is a spiritual child of last year's reading group,
+      organized by Hoa Le You can find all the relevant information on that
+      previous reading group <a href="https://github.com/lethienhoa/Deep-Learning-and-Natural-Language-Understanding-Reading-Group" >
+      here</a>.
+    </p>
+    <p>
+      One of the goals of this reading group is to provide a space dedicated to
+      discussion for the different NLP labs across Nancy (Synalp, Atilf, ...).
+      To that end, we try to make the presentations as inclusive as possible.
+    </p>
+    <div class="commands-container">
+      <table class="reading-group-session-commands">
+        <tbody>
+          <tr>
+            <td>
+              <a class="reversor">Reverse sessions</a>
+            </td>
+            <td>
+              <a class="collapsor">Collapse all</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="container">
       {% capture sessiondate %}
         {{"February 14, 2019" | date: "%b %d, %y" }}
       {% endcapture %}
@@ -98,6 +113,7 @@ title: Reading Group
           paper="Studying the Inductive Biases of RNNs with Synthetic Variations of Natural Languages"
           paper_link="https://arxiv.org/pdf/1903.06400.pdf"
       %}
+    </div>
   </section>
 {% endcapture %}
 {% include frags/template.html template_content=template_content %}
