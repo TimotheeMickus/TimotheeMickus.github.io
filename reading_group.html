@@ -5,7 +5,19 @@ title: Reading Group
   <section>
       {% include frags/section_header.html title="Reading Group" %}
       <p>
-      This page is dedicated to the NLP reading group @ Université de Lorraine.
+        This page is dedicated to the NLP reading group @ Université de Lorraine.
+        Meetings are scheduled every other Thursday.
+      </p>
+      <p>
+        This reading group is a spiritual child of last year's reading group,
+        organized by Hoa Le You can find all the relevant information on that
+        previous reading group <a href="https://github.com/lethienhoa/Deep-Learning-and-Natural-Language-Understanding-Reading-Group" >
+        here</a>.
+      </p>
+      <p>
+        One of the goals of this reading group is to provide a space dedicated to
+        discussion for the different NLP labs across Nancy (Synalp, Atilf, ...).
+        To that end, we try to make the presentations as inclusive as possible.
       </p>
       {% capture sessiondate %}
         {{"February 14, 2019" | date: "%b %d, %y" }}
@@ -20,11 +32,10 @@ title: Reading Group
         <p>
             BERT is also related to the
             <a href="https://arxiv.org/abs/1706.03762" >Transformer architecture
-            of Vaswani and colleagues </a>. See also the
-            <a href="https://arxiv.org/pdf/1901.02860.pdf"> Transformer-XL of
+            of Vaswani and colleagues</a>. See also the
+            <a href="https://arxiv.org/pdf/1901.02860.pdf">Transformer-XL of
             Dai and al</a>.
-            <a href="https://github.com/huggingface/pytorch-pretrained-BERT">
-            Here</a>'s a github of variations on the Transformer.
+            <a href="https://github.com/huggingface/pytorch-pretrained-BERT">Here</a>'s a github of variations on the Transformer.
         </p>
       {% endcapture %}
       {% include reading_group/reading_group_session.html
@@ -74,6 +85,18 @@ title: Reading Group
           speaker="Hoa Le"
           paper="Encoding Sentences with Graph Convolutional Networks for Semantic Role Labeling"
           paper_link="https://www.aclweb.org/anthology/D17-1159"
+          slides_link="https://docs.google.com/presentation/d/1R7wlD8yYmvEuJc0ALfat04vK4ER9mS7aFAak8gzruyY/edit#slide=id.p"
+          slides_downloadable=false
+      %}
+      {% capture sessiondate %}
+        {{"April 11, 2019" | date: "%b %d, %y" }}
+      {% endcapture %}
+      {% include reading_group/reading_group_session.html
+          date=sessiondate
+          location="Loria, B009"
+          speaker="Anastasia Shimorina"
+          paper="Studying the Inductive Biases of RNNs with Synthetic Variations of Natural Languages"
+          paper_link="https://arxiv.org/pdf/1903.06400.pdf"
       %}
   </section>
 {% endcapture %}
