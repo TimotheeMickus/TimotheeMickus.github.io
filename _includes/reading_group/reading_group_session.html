@@ -12,8 +12,14 @@
   <section class="reading-group-session {{ include.date | date: "%b%d%Y"}}" >
     <table>
       <tbody>
-
-        {% include frags/row.html header="Date" data=include.date %}
+        {% if include.hour %}
+          {% capture redate %}
+            {{ include.date | date:  "%b %d, %y at"}} {{ include.hour  | date: "%H:%M" }}
+          {% endcapture %}
+          {% include frags/row.html header="Date" data=redate %}
+        {% else %}
+          {% include frags/row.html header="Date" data=include.date %}
+        {% endif %}
         {% include frags/row.html header="Location" data=include.location %}
         {% include frags/row.html header="Presented by" data=include.speaker %}
         {% include frags/row.html header="Paper presented" data=include.paper %}
