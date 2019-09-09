@@ -1,0 +1,14 @@
+{% if include.data %}
+  <tr>
+      <th>{{ include.header }}:</th>
+      <td>
+        {% for el in include.data %}
+          {% if include.links %}
+            <span class="multirowval"><a href="{{ el }}"> link </a></span>
+          {% else %}
+            <span class="multirowval">{{ el }}</span>
+          {% endif %}
+        {% endfor %}
+      </td>
+  </tr>
+{% endif %}

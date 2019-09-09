@@ -23,11 +23,15 @@
         {% include frags/row.html header="Location" data=include.location %}
         {% include frags/row.html header="Presented by" data=include.speaker %}
         {% include frags/row.html header="Paper presented" data=include.paper %}
+        {% include frags/multirow.html header="Papers presented" data=include.papers links=false %}
         {% if include.paper_link %}
           {% capture link %}
             <a href="{{ include.paper_link }}">link</a>
           {% endcapture %}
           {% include frags/row.html header="Link to paper" data=link %}
+        {% endif %}
+        {% if include.paper_links %}
+          {% include frags/row.html header="Links to paper" data=include.paper_links links=true %}
         {% endif %}
         {% if include.slides_link %}
           {% capture link %}
