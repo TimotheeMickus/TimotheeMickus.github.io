@@ -64,7 +64,7 @@ title: Reading Group
           speaker="Timothee Mickus"
           paper="BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
           paper_link="https://arxiv.org/pdf/1810.04805.pdf"
-          slides_link="reading_group/slides/tmickus_1402.pdf"
+          slides_link="reading_group/slides/tmickus_140219.pdf"
           slides_downloadable=true
           supplementary_content=supcontent
       %}
@@ -85,7 +85,7 @@ title: Reading Group
           speaker="Timothee Mickus"
           paper="No Training Required: Exploring Random Encoders for Sentence Classification"
           paper_link="https://arxiv.org/pdf/1901.10444.pdf"
-          slides_link="reading_group/slides/tmickus_2802.pdf"
+          slides_link="reading_group/slides/tmickus_280219.pdf"
           slides_downloadable=true
           supplementary_content=supcontent
       %}
@@ -97,7 +97,7 @@ title: Reading Group
           speaker="Angela Fan"
           paper="Sharp Nearby, Fuzzy Far Away: How Neural Language Models Use Context"
           paper_link="https://nlp.stanford.edu/pubs/khandelwal2018lm.pdf"
-          slides_link="reading_group/slides/afan_1403.pdf"
+          slides_link="reading_group/slides/afan_140319.pdf"
           slides_downloadable=true
       %}
       {% capture sessiondate %}
@@ -120,7 +120,7 @@ title: Reading Group
           speaker="Anastasia Shimorina"
           paper="Studying the Inductive Biases of RNNs with Synthetic Variations of Natural Languages"
           paper_link="https://arxiv.org/pdf/1903.06400.pdf"
-          slides_link="reading_group/slides/ashimorina_1104.pdf"
+          slides_link="reading_group/slides/ashimorina_110419.pdf"
           slides_downloadable=true
           hour="14:30"
       %}
@@ -131,6 +131,31 @@ title: Reading Group
           date=sessiondate
           location="Loria, A015"
           speaker="Hoa Le"
+          slides_link="https://drive.google.com/open?id=1NVhfUt3teT8Bl5Ni5VuKLdUNTBYuj5VXU5K0x0jCDLk"
+          slides_downloadable=false
+          hour="14:30"
+      %}
+      {% capture sessiondate %}
+        {{"June 13, 2019" | date: "%b %d, %y" }}
+      {% endcapture %}
+      {% include reading_group/reading_group_session.html
+          date=sessiondate
+          location="Loria, A217"
+          speaker="Timothee Mickus"
+          paper="Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned"
+          paper_link="https://arxiv.org/pdf/1905.09418.pdf"
+          slides_link="reading_group/slides/tmickus_130619.pdf"
+          slides_downloadable=true
+          hour="10:30"
+      %}
+      {% capture sessiondate %}
+        {{"September 13, 2019" | date: "%b %d, %y" }}
+      {% endcapture %}
+      {% include reading_group/reading_group_session.html
+          date=sessiondate
+          location="Loria, B009"
+          speaker="Anastasia Shimorina"
+          paper="Some papers from ACL"
           hour="14:30"
       %}
     </div>
