@@ -9,11 +9,11 @@
   {% endfor %}
   <tr>
       <th>{{ include.header }}:</th>
-      <td>
+      <td class="multirow">
         {% for el in ary %}
           {% assign text = el | slice: 0 %}
           {% assign lnk = el | slice: 1 %}
-          <span class="multirowval">{{ text }} (<a href="{{ lnk }}" target="_blank">link</a>)</span>
+          <span>{{ text }} (<a href="{{ lnk }}" target="_blank">link</a>)</span>
         {% endfor %}
       </td>
   </tr>

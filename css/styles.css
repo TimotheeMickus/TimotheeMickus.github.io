@@ -50,3 +50,11 @@ table.reading-group-session-commands tbody td a {
 div.commands-container {
 	width:100%;
 }
+
+td.multirow > span:after {
+	content: ";";
+}
+
+td.multirow>span:last-child:after {
+	content: none;
+}
