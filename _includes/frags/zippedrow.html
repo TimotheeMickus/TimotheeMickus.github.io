@@ -1,0 +1,22 @@
+{% if include.fst and include.snd %}
+  {% assign ary = "" | split: "," %}
+  {% assign i=-1 %}
+  {% for elfst in include.fst %}
+    {% assign i = i | plus: 1 %}
+    {% assign elsnd = include.snd | slice: i %}
+    {% assign el = "" | split: "," | push: elfst | push: elsnd %}
+    {% assign ary = ary | push: el %}
+  {% endfor %}
+  <tr>
+      <th>{{ include.header }}:</th>
+      <td>
+        {% for el in ary %}
+          {% assign text = el | slice: 0 %}
+          {% assign lnk = el | slice: 1 %}
+          <span class="multirowval">{{ text }} (<a href="{{ lnk }}" target="_blank">link</a>)</span>
+        {% endfor %}
+      </td>
+  </tr>
+{% elsif include.fst %}
+  {% include frags/multirow.html header=include.header data=include.fst %}
+{% endif %}

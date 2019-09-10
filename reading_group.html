@@ -127,13 +127,23 @@ title: Reading Group
       {% capture sessiondate %}
         {{"April 25, 2019" | date: "%b %d, %y" }}
       {% endcapture %}
+      {% assign ppers="Sequence Level Training with Recurrent Neural Networks,An Actor-Critic Algorithm for Sequence Prediction,Self-critical Sequence Training for Image Captioning" | split: "," %}
+      {% assign links="https://arxiv.org/pdf/1511.06732.pdf https://openreview.net/pdf?id=SJDaqqveg http://openaccess.thecvf.com/content_cvpr_2017/papers/Rennie_Self-Critical_Sequence_Training_CVPR_2017_paper.pdf" | split:" " %}
+      {% capture supcontent %}
+        <p>
+            This session is dedicated to giving a broad understanding of reinforcement learning.
+        </p>
+      {% endcapture %}
       {% include reading_group/reading_group_session.html
           date=sessiondate
           location="Loria, A015"
           speaker="Hoa Le"
+          papers=ppers
+          paper_links=links
           slides_link="https://drive.google.com/open?id=1NVhfUt3teT8Bl5Ni5VuKLdUNTBYuj5VXU5K0x0jCDLk"
           slides_downloadable=false
           hour="14:30"
+          supplementary_content=supcontent
       %}
       {% capture sessiondate %}
         {{"June 13, 2019" | date: "%b %d, %y" }}
@@ -148,6 +158,11 @@ title: Reading Group
           slides_downloadable=true
           hour="10:30"
       %}
+      {% capture supcontent %}
+        <p>
+            In this session, Anastasia will give us a highlight of some papers from <a href="http://www.acl2019.org/EN/index.xhtml" target="_blank">ACL 2019</a>, which was held in Florence this summer.
+        </p>
+      {% endcapture %}
       {% capture sessiondate %}
         {{"September 13, 2019" | date: "%b %d, %y" }}
       {% endcapture %}
@@ -157,6 +172,7 @@ title: Reading Group
           speaker="Anastasia Shimorina"
           paper="Some papers from ACL"
           hour="14:30"
+          supplementary_content=supcontent
       %}
     </div>
   </section>

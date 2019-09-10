@@ -1,6 +1,6 @@
 {% if include.data %}
   <tr>
       <th>{{ include.header }}:</th>
-      <td>{{ include.data }}</td>
+      <td>{{ include.data }}{% if include.link %} (<a href="{{ include.link }}"  target="_blank" >link</a>){% endif %}</td>
   </tr>
 {% endif %}
