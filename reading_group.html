@@ -166,11 +166,17 @@ title: Reading Group
       {% capture sessiondate %}
         {{"September 13, 2019" | date: "%b %d, %y" }}
       {% endcapture %}
+      {% assign ppers="Deep Dominance - How to Properly Compare Deep Neural Models,We Need to Talk about Standard Splits,Aiming beyond the Obvious: Identifying Non-Obvious Cases in Semantic Similarity Datasets" | split: "," %}
+      {% assign links="https://www.aclweb.org/anthology/P19-1266/ https://www.aclweb.org/anthology/P19-1267/ https://www.aclweb.org/anthology/P19-1268/" | split:" " %}
+
       {% include reading_group/reading_group_session.html
           date=sessiondate
           location="Loria, B009"
           speaker="Anastasia Shimorina"
-          paper="Some papers from ACL"
+          papers=ppers
+          paper_links=links
+          slides_link="reading_group/slides/ashimorina_130919.pdf"
+          slides_downloadable=true
           hour="14:30"
           supplementary_content=supcontent
       %}
