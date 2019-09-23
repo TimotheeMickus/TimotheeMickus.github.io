@@ -180,6 +180,23 @@ title: Reading Group
           hour="14:30"
           supplementary_content=supcontent
       %}
+
+      {% capture sessiondate %}
+        {{"September 27, 2019" | date: "%b %d, %y" }}
+      {% endcapture %}
+      {% assign ppers="Through a gender lens: learning usage patterns of emojis from large-scale android users,Twitter's Glass Ceiling: The Effect of Perceived Gender on Online Visibility" | split: "," %}
+      {% assign links="http://delivery.acm.org/10.1145/3190000/3186157/p763-chen.pdf?ip=194.214.124.195&id=3186157&acc=OPEN&key=4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E6D218144511F3437&__acm__=1569239956_fb3cd4c222fa998e724f3e1c794ccbb7 https://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/view/13003/12748" | split:" " %}
+
+      {% include reading_group/reading_group_session.html
+          date=sessiondate
+          location="Loria, B009"
+          speaker="Bizhan Alipourpijani"
+          papers=ppers
+          paper_links=links
+          hour="14:30"
+      %}
+
+
     </div>
   </section>
 {% endcapture %}
