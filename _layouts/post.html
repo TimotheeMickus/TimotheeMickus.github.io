@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include frags/meta.html %}
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    {% include frags/nav.html %}
+    <section style="text-align:justify; max-width:800px;">
+      <header>
+        <h1><tt>{{ page.title }}</tt></h1>
+      </header>
+      {{ content }}
+      <footer style="width:100%;">
+        {% for category in site.categories %}
+          {% assign catg_name = category.first %}
+          {% if catg_name == page.category %}
+              {% assign catg_posts = category.last %}
+          {% endif %}
+      {% endfor %}
+      {% for post in catg_posts %}
+          {% if post.title == page.title %}
+              {% unless forloop.last %}
+                  {% assign next = catg_posts[forloop.index] %}
+                  <a style="float:left;" href="{{ site.baseurl }}{{ next.url }}">&larr;{{ next.title }}</a>
+              {% endunless %}
+              {% unless forloop.first %}
+                  <a style="float:right;" href="{{ site.baseurl }}{{ prev.url }}">{{ prev.title }}&rarr;</a>
+              {% endunless %}
+          {% endif %}
+          {% assign prev = post %}
+      {% endfor %}
+      </footer>
+    </section>
+  </body>
+</html>
