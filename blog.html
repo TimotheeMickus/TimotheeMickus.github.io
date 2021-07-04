@@ -1,0 +1,32 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include frags/meta.html %}
+    <title>Blog posts</title>
+  </head>
+  <body>
+    {% include frags/nav.html %}
+    <section>
+      <header>
+        <h1><tt>Blog</tt></h1>
+      </header>
+      <section style="max-width:800px; text-align:justify">
+        <p>
+          Here's a section of the website where I'll just write stuff.<br/>
+          This page is a general index, so you may want to have a look at the
+          other links under blog in the navigation bar.
+        </p>
+        <ul>
+          {% for post in site.posts %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+              <em>{{ post.excerpt|strip_html }}&hellip;</em>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </section>
+  </body>
+</html>
