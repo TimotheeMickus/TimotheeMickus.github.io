@@ -1,0 +1,158 @@
+---
+layout: custom_post
+title: "Computational Linguistics, in a nutshell."
+category: "my-phd-explained-to-my-folks"
+date: 2021-07-11
+excerpt_separator: <!--more-->
+---
+<p>
+  Let's play a <em>fun</em> game! I'll give you a type of scientist, and you'll
+  answer with what they do. Well, there's only me here right now, so I'll have to
+  play on my own, but whatever. Game start!
+</p>
+<!--more-->
+<p>
+  <b>Geologists?</b> they study rocks and pebbles. <b>Astronomers?</b> they use
+  big telescopes to look at stars and space things. <b>Mathematicians?</b> they
+  study numbers! Or geometric figures. Or stuff like that. <b>Biologists?</b>
+  they study life and living things in general, and how they live.
+  <b>Sociologists?</b> They study society. <b>Linguists?</b> They study
+  language, and that's very cool.
+</p>
+<p>
+  "Okay, that game is easy!" or so you say. Well, I'm sure your answers must have
+  irked some colleagues to be fair, but yeah, you got the gist pretty quickly.
+  There's generally "one big thing", one core topic of research in a scientific
+  field, and you can always hearken back to that starting idea. But it's not
+  entirely accurate.
+</p>
+<p>
+  Going back to biologists: they do study life, but the angle adopted in biology
+  is rather specific. Sure, they study life and living things, but they adopt a
+  mechanistic view of life: how life functions, so to speak. They do not discuss
+  what is the meaning of life; instead they describe the chemistry needed for a
+  microbe to propagate in your body, or how much force can the muscles in a
+  kangaroo's leg exert. If want to study the meaning of life, then you should
+  probably study philosophy or theology or something of the sort.
+</p>
+<p>
+  Now let's go back to linguists. Earlier, you said that linguists study language
+  (and also that it was very cool, and it was very kind of you; thanks, that does
+  wonders to my self-esteem to hear that kind of stuff). We linguists do study
+  language, but there are many ways you can study language. You can have a look
+  at how  Shakespeare's verses are written, and how they differ from the style of
+  Blake&mdash;that's language. You can do like the <em>Académie des Immortels
+  Peut-être Trop Poussiéreux</em>, and ponder deeply about the <em>proper</em>
+  gender of the word "covid" and wonder whether every single French speaker got
+  it wrong all this time&mdash;that looks extremely silly to me, but again,
+  technically, you're dealing with language.
+</p>
+<p>
+  <em>Linguistics</em> is really about describing idioms and dialects, like how
+  biologists describe living things. We can expect all languages to share some
+  features, as they all are manifestations of the human capacity to communicate
+  with sounds or gestures&mdash;just like you can expect living things to be made
+  of proteins, genes and cells.
+</p>
+<aside>
+  <b>Note:</b> to the biology nerds who shot up shouting "<em>viruses!</em>":
+  please calm down. You're not helping. We're trying to help my folks here, okay?
+</aside>
+<p>
+  Linguists are mostly focused on describing human language&mdash;unlike
+  the French <em>Académie</em> that is interested in prescribing the "correct
+  usage" (whatever that means). To a linguist, the question of correction is only
+  relevant in that it can influence the view that speakers have of their own
+  speech. Linguists are also not necessarily focused on the style and literary
+  value of specific pieces of text; although they can be, insofar as literary
+  significance is a useful concept when describing language.
+</p>
+<p>
+  In short, linguists can contrast and compare Globish to how Queen Elizabeth
+  speaks, but they won't decry the former and revere the latter. Linguists can
+  consider that rhyme schemes and fixed meters are formal markers of French
+  classical poetry just like Verlan denotes modern popular French speech.
+</p>
+<p>
+  So I'm a linguist. More precisely, I'm a computational linguist or a NLP
+  scientist, depending on whom you talk to. Computational linguistics (CL) is the
+  sub-field of linguistics that further takes a computational approach to language.
+  NLP stands for Natural Language Processing, and the field it covers is very much
+  adjacent to CL, but I'll leave that can of worm for the next instalment.
+  The sort of questions I'm working on generally boil down to "can you set up a
+  mathematical model of some aspect of language? And what can you learn from
+  that model?"
+</p>
+<p>
+  This is probably very abstract. Let's take an example. Let's suppose you're
+  trying to learn German, but, sadly, you can't for the life of you remember the
+  grammatical gender of German nouns. Now, you could wallow in grief, or you could look
+  into whether these genders are truly completely random. There are two things we
+  can expect to play a role. The first one is word meaning: if you have masculine and
+  feminine genders, a naive assumption you can make is that <em>woman</em> be a
+  feminine word, and <em>man</em> be a masculine one; likewise if you have animate and
+  inanimate genders, then <em>human</em> should be animate, whereas <em>pebble</em>
+  is probably not.
+</p>
+<aside>
+  <b>Note:</b> Yes, I hear you screaming at me that <em>Mädchen</em> is neuter,
+  not feminine. A) Please stop screaming, the biologists from earlier
+  already wore me out. B) Language is messy, that's why it's fun to study.
+</aside>
+<p>
+  The other thing you can expect to play a role is word frequency; i.e., how often
+  a given word is used on average. That's because frequency always plays a role, or
+  to be precise, it always messes with our experiments in computational linguistics.
+</p>
+<p>
+  Back to our original question: is grammatical gender in German completely random?
+  Or do meaning and frequency play a significant role? Well, a computational
+  linguist would measure, correlate and plot these two factors, and study
+  what they get from all their measurements.
+</p>
+<p>
+  And in fact, you can find some sort of patterns. For instance, things with
+  similar meanings will tend to have the same grammatical gender (e.g., <em>Tee</em>,
+  <em>Saft</em>, <em>Kaffee</em> are all masculine in German), except for the
+  most common item in the group (and <em>Wasser</em> is indeed neuter). The
+  pattern is not systematic, yet it does suggest that genders are not random but
+  highly informative. They help speakers of German to  distinguish between
+  situations on the basis of how mundane or exceptional they appear to be:
+  drinking water is perhaps less noteworthy than drinking coffee.
+</p>
+<p>
+  A computational linguist will attempt to be systematic in their study (like
+  any other scientist). To do so, they would devise or adapt existings metrics
+  to <em>quantify</em> this degree of informativity, and check whether it
+  generalizes at a larger scale than our select collection of beverages.
+</p>
+<aside>
+  <b>Note:</b> Credit where it is due, this German gender example is in fact
+  <a href="https://www.researchgate.net/publication/318013522_A_Functional_Theory_of_Gender_Paradigms">
+  a paper by Melody Dye and colleagues, published in 2017</a>.
+</aside>
+<p>
+  This mathematical approach to language also means that it will be easier to
+  couple linguistics with computers and technology in general. For a computer,
+  the mathematical models of language we build will be easier to handle than the
+  raw noisy mess of our daily exchanges. I promise I'll speak more about this
+  aspect next week.
+</p>
+<p>
+  So there you have it! I'm a computational linguist, and I try to study language
+  through computations. One question you may have is why: why am I interested in
+  this rather obscure sub-domain of linguistics. I'll try to go a bit deeper into
+  the weeds in future instalments of this series, but for now, I'll just mention
+  two reasons.
+</p>
+<p>
+  The first is that computational models of language are global descriptions of
+  languages. I generally have to deal with all the data available at once, instead
+  of selecting observations that corresponds to the problem I study. I find that
+  angle of study more appropriate to my understanding of language, but I'll save
+  the full explanation for an upcoming rant.
+</p>
+<p>
+  The second, and perhaps the most important reason, is that I want to build
+  talking robots, damn it!
+</p>

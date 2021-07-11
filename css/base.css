@@ -74,3 +74,8 @@ tr:hover {
 table {
   border-collapse: collapse;
 }
+
+aside {
+  width:75%;
+  padding-left:25%;
+}
