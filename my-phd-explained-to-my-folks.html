@@ -19,15 +19,18 @@
           on to people who have no specific knowledge of math, linguistics, or
           NLP.
         </p>
-        <ul>
+        <div class="series">
+          {% assign i = 0 %}
           {% assign sorted = site.categories.my-phd-explained-to-my-folks | sort: 'date' %}
           {% for post in sorted %}
-            <li>
-              <a href="{{ post.url }}">{{ post.title }}</a>
-              <em>{{ post.excerpt|strip_html }}&hellip;</em>
-            </li>
+            <div class="preview">
+              <div class="counter">{% assign i = i | plus:1 %}{{ i }}</div>
+              <a class="link-tile" href="{{ post.url }}">
+                <b>{{ post.title }}</b>
+                <em>{{ post.excerpt|strip_html }}&hellip;</em>
+              </a>
+            </div>
           {% endfor %}
-        </ul>
       </section>
     </section>
   </body>
