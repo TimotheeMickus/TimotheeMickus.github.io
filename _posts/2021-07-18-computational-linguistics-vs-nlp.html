@@ -1,0 +1,163 @@
+---
+layout: custom_post
+title: "Computational Linguistics vs. NLP"
+category: "my-phd-explained-to-my-folks"
+date: 2021-07-18
+excerpt_separator: <!--more-->
+---
+<p>
+  Have you ever talked to a scientist about their sciencing? They are
+  <em>geeks</em>. They will ramble on, and on, and on about their field of study
+  and never shut up. Kind of like what happens when you talk to an
+  engineer&mdash;it's like wrestling in the mud with a pig. Here is my question:
+  which is worse, the scientist or the engineer?
+</p>
+<!--more-->
+<p>
+  More seriously, this very question&mdash;"what's the difference between
+  engineering and science?"&mdash;is in fact rather important in today's
+  research on language and computation. One place where that is very clear is
+  the reviewing guidelines of the major computational linguistics conferences
+  sponsored by the ACL. Let me start by explaining away this jargon first; I'll
+  get to my point in a minute.
+</p>
+<p>
+  The <em>ACL</em> is the <a href="https://www.aclweb.org">Association for
+  Computational Linguistics</a>, the major scientific society in my field of
+  study. <em>Peer review</em> is how we decide as a community of researchers if
+  a paper looks scientifically sound and intellectually interesting; it
+  basically consist in what your teacher used to do when they were too lazy to
+  go over your reports and had students grade each other's work instead.
+  Concretely, we get a bunch of submitted papers to read, and for each paper we
+  fill in a questionaire with questions such as "is this paper appropriate for
+  the venue it has been submitted to?" or "how interesting and impactful do you
+  think this piece of research is, on a scale of 1 to 5?". There are three to
+  five different anonymous reviewers per submission; some venues also include an
+  author response phase to allow for clarifications where needed.
+</p>
+<aside>
+  <b>Note:</b> Peer review is by no means a perfect system. In my experience,
+  reviewer #2 generally makes you want to throw your computer/yourself through
+  the window with how blasé and thoughtless their review looks. You've toiled
+  away a few good months on some piece of research, trying to make your argument
+  as foolproof as possible, and they get to scribble a lazy line like "I'm not
+  entirely convinced by the usefulness of the research described". Period. No
+  argument as to why, or how they arrive at this opinion, no it xould be too
+  much work to write a <em>second</em> sentence. Anyway, rant time's over, back
+  to the blog post. Calm. Zen. Deep breath.
+</aside>
+<p>
+  Peer review guidelines are a good indicator of what a field of study values:
+  they outline very neatly the sort of elements that matter when deciding
+  whether some submission is worth presenting at a venue. The reviewing
+  guidelines of conferences like NAACL, EACL or EMNLP (all of which are linked
+  to ACL), generally mention what "Prof. Philip Resnik at University of Maryland
+  has to say regarding different kinds of contributions". In line with this long
+  tradition of copy pasta, let me copy and paste the relevant citation, which I
+  grabbed from
+  <a href="https://2020.emnlp.org/blog/2020-05-17-write-good-reviews">these
+  guidelines</a>:
+</p>
+<blockquote cite="https://2020.emnlp.org/blog/2020-05-17-write-good-reviews">
+  <p>
+    I think there would be significant value in encouraging reviewers to think
+    explicitly about the nature of the contribution, and what questions then
+    need to be asked. As a first pass for consideration/discussion:
+  </p>
+  <ul>
+    <li>Is this research making a <b>scientific</b> contribution? If so:
+      <ul>
+        <li>
+          What is the phenomenon in the world that the authors are seeking to
+          improve our understanding of?
+        </li>
+        <li>
+          What do we now know about this phenomenon that we did not know before?
+        </li>
+      </ul>
+    </li>
+    <li>
+      Is this research making an <b>engineering</b> contribution? If so:
+      <ul>
+        <li>
+          What is the real-world problem (or set of problems) that this work is
+          making progress on solving?
+        </li>
+        <li>
+          Alternatively, if it's not targeting a current real-world problem,
+          what real-world problem(s) will this work help enable solutions of?
+        </li>
+      </ul>
+    </li>
+    <li>
+      Is this research making a <b>theoretical</b> (e.g. mathematical)
+      contribution? If so:
+      <ul>
+        <li>
+          What do we know now that we did not know before?
+        </li>
+        <li>
+          How does this theoretical or mathematical advance connect to either
+          scientific or engineering goals? (See above.)
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    Work in computational linguistics might include a mixture of scientific,
+    engineering, and theoretical contributions, rather than just one. But, I am
+    suggesting, if a paper does not make a contribution in any of those three
+    categories, with the sub-bullets having understandable answers, one should
+    seriously consider whether it belongs at the conference.
+  </p>
+</blockquote>
+<p>
+  I found Philip Resnik three-way distinction rather useful when approaching
+  how I present my own work. I will confess that I am in general less passionate
+  about the engineering aspects&mdash;I'm less interested in "problems to
+  solve", and more attracted by "questions to raise". Having said that, I
+  understand that it doesn't necessarily float other researchers' boat, as they
+  may be more interested in clear-cut answers and definitive proofs. Trying to
+  reframe my work so that it does a little bit of both has been a fun exercise.
+</p>
+<p>
+  Resnik also echoes here the distinction between "Computational Linguistics"
+  and "Natural Language Processing" that I had briefly alluded to in a previous
+  post. Here's an over-simplified way to explain that distinction: CL is more
+  interested in the scientific aspect of the field, whereas NLP is more invested
+  in the engineering aspect of it. What matters in CL is what your model
+  explains, whereas what matters in NLP is whether your model works.
+</p>
+<p>
+  Let me stress it again: this is a gross over-simplification. A more subtle way
+  to put it could be to say that NLP is the sub-domain of Machine Learning
+  interested in language applications, whereas CL is the sub-domain of
+  linguistics interested in computational models of language. And as per usual
+  with scientists and engineers, if you put two in a room, you'll get three
+  different opinions in no time, so this description of the distinction is
+  probably not unanimous in the community.
+</p>
+<p>
+  Case in point: this second description, with CL being linguistics and NLP
+  being Machine Learning, seems to me like it misses a point. CL works are
+  generally relevant to the NLP community, and vice-versa. Sure, a CL paper
+  might need a few touch-ups in order to use the jargon appropriate to the NLP
+  subfield, but it's not as dramatic as visual aesthetic studies and the
+  physiology of vision: although both field study vision and its effects, they
+  are probably not highly mutually intelligible. In contrast, results from
+  either CL or NLP are generally applicable to both NLP and CL.
+</p>
+<p>
+  Lastly, I should mention that there are some differences between the two,
+  especially when it comes to the tools researchers from both fields employ. NLP
+  has been dominated by artificial neural networks in the last few years. CL,
+  and more largely speaking computational approaches to linguistics, rarely use
+  deep neural networks&mdash;generally, they rely more on good old statistical
+  tests and statistical models. I promise I'll get more into the weeds in
+  upcoming instalments to make all that clearer.
+</p>
+<p>
+  Now if you don't mind, I have some other things I must attend to. There's the
+  author response due for some paper I submitted, and <em>I have a few things to
+  say about reviewer #2's remarks.</em>
+</p>
