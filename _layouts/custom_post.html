@@ -13,7 +13,7 @@
         <h1><tt>{{ page.title }}</tt></h1>
       </header>
       {{ content }}
-      <footer style="width:100%;">
+      <footer>
         {% for category in site.categories %}
           {% assign catg_name = category.first %}
           {% if catg_name == page.category %}
@@ -26,9 +26,15 @@
                   {% assign next = catg_posts[forloop.index] %}
                   <a style="float:left;" href="{{ site.baseurl }}{{ next.url }}">&larr;{{ next.title }}</a>
               {% endunless %}
+              {% if forloop.last %}
+                  <span class="placeholder" style="float:left;">&nbsp;</span>
+              {% endif %}
               {% unless forloop.first %}
                   <a style="float:right;" href="{{ site.baseurl }}{{ prev.url }}">{{ prev.title }}&rarr;</a>
               {% endunless %}
+              {% if forloop.first %}
+                  <span class="placeholder" style="float:right;">&nbsp;</span>
+              {% endif %}
           {% endif %}
           {% assign prev = post %}
       {% endfor %}

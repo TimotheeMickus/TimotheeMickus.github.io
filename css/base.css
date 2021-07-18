@@ -61,6 +61,8 @@ body > section {
   width: 85%;
   height: 100%;
   overflow-y: scroll;
+  padding: 5px;
+  margin-right: 10px;
 }
 
 td {
@@ -108,4 +110,19 @@ div.series div.preview a.link-tile {
   text-decoration: none;
   color: black;
   padding: 10px;
+}
+
+footer {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+blockquote {
+  font-style: oblique;
+  font-size: 16px;
+  margin-left: 32px;
+  border-left: 4px solid #CCC;
+  padding-left: 8px;
 }
