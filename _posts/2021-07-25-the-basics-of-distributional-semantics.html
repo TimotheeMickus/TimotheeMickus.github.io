@@ -1,0 +1,129 @@
+---
+layout: custom_post
+title: "The basics of Distributional Semantics"
+category: "my-phd-explained-to-my-folks"
+date: 2021-07-25
+excerpt_separator: <!--more-->
+---
+<p>
+  What is the meaning of meaning? I know this question seems borderline
+  smartass-territory, but it has been a major unanswered question in the study
+  of language for a few millennia now.<!--more--> It was in Plato's
+  <em>Cratylus</em>. There's a rather famous book in linguistics called (no
+  jokes) "The Meaning of Meaning", by Odgen and Richards, written in 1923, but
+  it's not like this question has been solved in the last century either.
+</p>
+<p>
+  Perhaps, if we can't tell what meaning <em>is</em>, we should tell what
+  meaning <em>does</em> instead. And here's an idea that many have worked with:
+  take an infinite spreadsheet, and for every sentence you encounter, record
+  every object, every action that sentence implies. So one row of your
+  spreadsheet will read "In the sentence <em>I bashed Plato's head with my copy
+  of the Cratylus</em>, there are one "Plato", one "I", one book, one act
+  of bashing someone's head, etc."
+</p>
+<aside>
+  <b>Note:</b> We can do a bit better: we can link back those objects to say how
+  they relate. We would end up something like "In the sentence <em>I bashed
+  Plato's head with my copy of the Cratylus</em>, there are x, y and z, such
+  that x is Plato, y is I, z is a book, y bashes the head of x, the
+  instrument of the head-bashing is z, etc." This is known as predicate logic,
+  and it does help in doing more exciting stuff than our basic
+  spreadsheet&mdash;also known as propositional logic.<br/>
+  Also, if any semantician is reading this: I know the analogy is bad. Please
+  start by reasoning away the biologists & German grammarians from last time;
+  they are still camping outside my door.
+</aside>
+<p>
+  This looks like a very convoluted way of paraphrasing our original sentence,
+  but it does have some advantages: now you know exactly what's in that
+  sentence, and what other sentences have similar bits of meaning. You can
+  decide whether two sentences are paraphrases, i.e., have the same meaning, by
+  looking at whether equivalent spreadsheet-rows. You have atoms of meaning, and
+  the power of the atom is formidable (or so I've heard).
+</p>
+<p>
+  There are shortcomings to our nuclear spreadsheet. To start with, how should
+  we decide what to include? To go back on our previous example: should we
+  include the fact that it is <em>my</em> copy of the Cratylus&mdash;should we
+  add some sort of "owing" situation to our spreadsheet? And what if it's only
+  the copy I borrowed from the local library? Must we have two different rows on
+  our spreadsheet, then? Here's another problem: perhaps you are convinced that
+  "the Cratylus". is a mid-70's rock album&mdash;in which case your and my
+  spreadsheets will not agree. Also, how long would it take to catalogue every
+  last one of the infinite number of sentences we can come up with?
+</p>
+<p>
+  And lastly, what have we explained of the meaning of our atoms? What would
+  such a spreadsheet tell us about what a book is? Perhaps there are some things
+  we could say&mdash;in principle, our spreadsheet would contain a row
+  indicating that "books" have those things called "pages", and another stating
+  that said "pages" are "written on", etc. We could certainly cycle through our
+  spreadsheet indefinitely, but it would only push us back into an endless cycle
+  of references to other spreadsheet rows. Not that the would glean nothing from
+  this journey through our spreadsheet: it does allow us to link words to one
+  another, depending on how they are related&mdash;although in a very
+  inconvenient way.
+</p>
+<p>
+  Out with the spreadsheet, then, in with Zellig Harris. In 1954, he wrote a few
+  pages on how you could use distributional properties to describe language and
+  its structure. "Distribution" is just our scientific term for the sort of
+  contexts associated with a linguistic item. For instance, we speak of
+  "complementary distributions" of phones whenever their contexts have no
+  overlaps, such as the two "th" sounds in English. English speakers always know
+  whether they'll pronounce a word with a "th" in it using the [ð] sound of
+  "this" or the [θ] sound of "thin", and there are no words where switching [ð]
+  for [θ] would change the meaning.
+</p>
+<aside>
+  <b>Note:</b> I know. I know about "thy thigh". Are we going to have the whole
+  "Mädchen" conversation all over again?
+</aside>
+<p>
+  Distribution doesn't have to be specifically phonetic, we also apply to any
+  linguistic item. In this article, Harris also explicitly discusses how this
+  distributional structure is linked to meaning&mdash;more precisely, how they
+  can be expected to be correlated. Here's the gist: suppose you just said the
+  word "cat". It's therefore likely that you were talking about dogs; and from
+  that, I, cunning linguist, can deduce that words related to dogs are going to
+  appear in your speech: you are more likely to use words such as "canine",
+  "barking" or "tail"  than "pope", "quantum" or "asinine".
+</p>
+<p>
+  In short, the meaning of "dog" is correlated with the words that appear around
+  it, that is to say, word meaning should correlate with word distribution. And
+  that's what we call <b>distributional semantics</b>, and that's what I study
+  in my thesis. This is in fact a very similar idea to what we pointed at before
+  by cycling through our spreadsheet; but it also allows us to skip the whole
+  hand-labelling process altogether. It hinges on us being able to properly
+  characterize the distribution of a word, but that's something the NLP
+  community knows how to do. More on that in later installments, I guess?
+</p>
+<aside>
+  <b>Note:</b> Many researchers cite a paper of J. R. Firth from 1957 when
+  presenting this whole distributional structure thing. Said paper does contain
+  a catchy quote: "You shall know a word by the company it keeps!" but
+  interestingly Firth himself had a very different position about meaning, which
+  he described as something of a <em>layered cake</em>, where each level of
+  linguistic analysis, from phonology to semantics proper, contributed with one
+  layer. The above quote was mostly about Firth endorsing corpus-based
+  linguistics: not coming up with your examples yourself, but instead compiling
+  them "from the wild", as they appear spontaneously in the productions of
+  native speakers. Funnily enough, Firth also voiced a number of critiques
+  against Harris' work and methodology.
+</aside>
+<p>
+  There you have it! My thesis is about comparing distributional semantics
+  models with dictionary definitions. I think the latter are less mysterious
+  than the former, hence why I'm starting with those. Let me also stress a few
+  key points: distributional semantics is by no means the only semantic theory
+  we use in NLP and CL. It has its weaknesses, and we'll come to that (spoiler:
+  that's where the squirrels and octopuses come in!). There are also many, many
+  models that were dubbed as "distributional semantics", some of which are
+  otherwise completely unrelated.
+</p>
+<p>
+  Anyways, talk to you next week, I'm off to the library, I have to explain how
+  I got their copy of the Cratylus so... <em>dirty</em>.
+</p>
