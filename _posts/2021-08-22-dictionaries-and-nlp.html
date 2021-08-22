@@ -1,0 +1,134 @@
+---
+layout: custom_post
+title: "Dictionaries and NLP"
+category: "my-phd-explained-to-my-folks"
+date: 2021-08-22
+excerpt_separator: <!--more-->
+---
+<p>
+  If you've read the previous post, then you shouldn't be too surprised that
+  computational linguists don't think of dictionaries as old dusty tomes with no
+  purpose other than fitting the height of their computer screen (though perhaps
+  some do).
+</p>
+<!--more-->
+<p>
+  Likewise, it's not like science was invented in the last century. Case in
+  point, lexicographers are generally familiar with the "Aristotelian
+  definition", which is more or less a rule of thumb for producing useful
+  definitions. The method goes as follows: when you define something, start by
+  stating what kind of thing it is. For instance: a duck is a kind of bird, a
+  hammer is a kind of tool, and so on. Then state what differentiates that thing
+  from others of the same kind: a duck is
+  <a href="https://en.wiktionary.org/wiki/duck#Noun">an aquatic bird with a flat
+  bill and webbed feet</a>; a hammer is
+  <a href="https://en.wiktionary.org/wiki/hammer#Noun">a tool with a heavy head
+  used for pounding</a>.
+</p>
+<aside>
+  <b>Note:</b>
+  As we scientists like to sound smart, we use the latin words "genus" and
+  "differentia" rather than the English "kind" and "differentiating
+  characteristics". Aside from this smartipantiness, this methodology has other
+  obvious shortcomings. For one thing, it works okay with most concrete things,
+  but things get messy very quickly when you try to apply it to abstract nouns,
+  verbs, adjectives, or even common words such as "ouch".
+</aside>
+<p>
+  The Aristotelian definition is a good starting point when studying definition
+  writing. Poetically, it also proves to be a good starting point for NLP
+  scientists working with dictionaries. In 1985, Chodorow, Byrd and Heidorn
+  suggested that you could leverage Aristotelian definitions to construct
+  semantic hierarchies. Going back to our example of "duck", we see that the
+  first noun in that definition is the genus, "bird". On the other hand, if you
+  look it up, you'll find that
+  <a href="https://en.wiktionary.org/wiki/mallard#English">"mallard"</a>,
+  <a href="https://en.wiktionary.org/wiki/scaup#English">"scaup"</a> or
+  <a href="https://en.wiktionary.org/wiki/pochard#English">"pochard"</a> all use
+  "duck" as their genera.
+</p>
+<p>
+  This should come as no surprise to the duck-lovers among my readers, but they
+  are probably few. For the others, I strongly encourage you to reach out to
+  your inner old-lady-near-a-pond-surronded-by-way-too-many-birds. Or to google
+  those words. Anyways, they are kinds of ducks. I know because I googled
+  "kinds of ducks" when writing this post.
+</p>
+<p>
+  The more linguistically oriented among my readers, while they may not be the
+  truest of anatidaephiles, will have noticed that the genus is a hypernym of
+  the word being defined. All ducks are birds; all mallards are ducks; and using
+  Aristotelian definitions, we can construct a hiearchy of semantic categories.
+</p>
+<aside>
+  <b>Note:</b>
+  I ended up using a very similar approach in my Masters' thesis, although I did
+  not know about Chodorow, Byrd and Heidorn at the time. More precisely, I used
+  the wiktionary to construct a lexicon of French human nouns. With a few
+  well-chosen genera, you can end up with a fairly large list of words.<br/>
+  Another point to stress: not all definitions follow this Aristotelian pattern.
+</aside>
+<p>
+  That's already one fun thing you can do with a dictionary: build a taxonomy
+  from definitions! But that's not all you can do. One key application of NLP is
+  to build software that tells you which meaning a word has in a given context.
+  This <em>word sense disambiguation</em> task, or WSD for short, would be able
+  to tell you that in the sentence "The banks of the Meurthe river are ruled by
+  ferocious mallards that <em>will fight you</em>", we're using the riverside
+  meaning of "bank", but in "In case of a bank robbery, hide under your desk",
+  we're using the "building of a money-managing institution".
+</p>
+<p>
+  In 1986, Michael Lesk suggested that one could compare the words in the
+  context of our ambiguous target, and those occuring in all of its definitions.
+  By selecting the definition that has the most words in common with the
+  context, we can disambiguate the word. In practice, it'd go like that: if I
+  want to disambiguate the word "banks" in the sentence "The banks of the
+  Meurthe river are ruled by ferocious mallards that <em>will fight you</em>", I
+  can note that the definition
+  <a href="https://en.wiktionary.org/wiki/bank#Noun_2">an edge of river, lake,
+  or other watercourse</a> has one word in common with my sentence. That's the
+  most I can get from all possible definitions for that word, hence I would
+  rightly conclude that this definition is the one that corresponds to the
+  meaning of "banks" in this context.
+</p>
+<p>
+  This is obviously not the most accurate way of performing WSD, but it's a
+  start. Some authors, e.g., Gaume and Muller in 2004, have suggested
+  improvements to Lesk's approach. One simple thing that you can do is to
+  explore the dictionary a bit more thoroughly to compute the match between
+  context and definition.
+</p>
+<p>
+  Suppose I want to disambiguate the word "duck". One of the definitions that
+  Lesk's method would look up is the one that says a duck is
+  <a href="https://en.wiktionary.org/wiki/duck#Noun">an aquatic bird with a flat
+  bill and webbed feet</a>. But why stop there? We can also look up the genus
+  "bird", viz., <a href="https://en.wiktionary.org/wiki/bird#Noun">an animal,
+  characterized by beeing warm-blooded, having feathers and wings usually
+  capable of flight, having a beaked mouth, and laying eggs<a>. As all ducks are
+  also birds, these characteristics can also help us disambiguate our word:
+  if the words "feathers" or "eggs" appear near the occurrence of "duck" we wish
+  to disambiguate, then that's a clue.
+</p>
+<p>
+  As these elements are less specificly related to ducks and apply more
+  generally to all sorts of birds, Gaume and Muller consider them as less solid,
+  more circumstancial evidence. On the other hand, we don't have to stop at the
+  genus: we can see that aquatic things are those
+  <a href="https://en.wiktionary.org/wiki/aquatic#Adjective">relating to water;
+  living in or near water, taking place in water</a>. Hence if the context
+  suggests that our ambiguous duck is near a body of water, then again, that's
+  one more clue for us.
+</p>
+<p>
+  That's probably quite a lot to take in. There are obviously a lot more works
+  that have used dictionaries, but these few examples give you a general idea of
+  how NLP scientists can concretely exploit dictionaries in creative ways. I
+  plan to focus on how we can use dictionaries in conjunction with word vectors
+  in a future post.
+</p>
+<p>
+  Also, friendly tip: don't feed the ducks, unless you're a seasoned veteran
+  grandma that fears no flock of quacking beasts. Ducks <em>will fight you</em>.
+</p>
