@@ -1,0 +1,209 @@
+---
+layout: custom_post
+title: "Gradient Descent into madness"
+category: "my-phd-explained-to-my-folks"
+date: 2021-08-29
+excerpt_separator: <!--more-->
+---
+<p>
+  I did my best to convince you to stop reading. I discussed dry, nitpicky
+  theoretical arguments to distinguish between two fields that are essentially
+  the same. I made lame duck jokes. I talked about old dusty, mouldy
+  dictionaries. And yet you chose to remain here. Whatever comes next is on you.
+</p>
+<p>
+  Today's topic is calculus. Matrix calculus.
+</p>
+<!--more-->
+<p>
+  Disclaimer first: I am not going to discuss the gruesome math equations in
+  much details. My aim in this post is to give you, the reader, an idea of how
+  neural networks function and "learn" stuff.
+</p>
+<p>
+  Neural networks are a major component of my everyday work. If you
+  grab me at any point of the day, chances are I am doing one of the following:
+</p>
+<ol>
+  <li>Read scientific papers</li>
+  <li>Write scientific papers</li>
+  <li>Drink coffee, and chat with colleagues</li>
+  <li>Clean up data</li>
+  <li>Run experiments, generally using neural networks</li>
+</ol>
+<aside>
+  <b>Note:</b>
+  I think people have a general idea of what items (1)&ndash;(3) look like,
+  although it's probably wrong to some extent. For instance, writing papers is
+  excruciating, reading papers is an art, and chatting with colleagues is
+  absolutely necessary to do good science. For the record, (4) cleaning data
+  involves transforming a heap of garbage that I most likely grabbed from the
+  internet and turn it into something I can chuck into a network. I might write
+  another post on all that later on.
+</aside>
+<p>
+  The first thing you need to know about neural networks is that they are
+  <em>models</em>. We try to represent some phenomenon by means of a
+  mathematical setup that hopefully will generalize to unseen data.
+</p>
+<p>
+  Let's take a concrete example: suppose I am a hardy biologist. I am interested
+  in the correlation between duck size and duck violence: I have observed that
+  bigger ducks tend to be more dangerous. As I am a scientist, I've plotted the
+  number of violent acts against the size of the mallards:
+</p>
+<div style="text-align:center">
+  <img src="{{ site.url }}/img/intuit.png" alt="Highly scientific plot">
+</div>
+<p>
+  Instead of handling all these data points separately, we would like a handy
+  formula that gives the expected violence of a duck given its size. A formula
+  that works, i.e., generalizes well to unseen data, is a way of making science,
+  because science is all about generalizing.
+</p>
+<p>
+  Here, my plot suggest that there is indeed a correlation between duck size and
+  duck violence. In fact, it looks linear: I could draw a straight line through
+  my data points that fit nicely. As a reminder, the equation for a straight
+  line is <tt>y&nbsp;=&nbsp;mx&nbsp;+&nbsp;b</tt>. Here, <tt>m</tt> would be the
+  slope (i.e., how steep the line is: 0 is a flat line and infinity is a
+  vertical line) and <tt>b</tt> is the bias (i.e., where our line crosses the
+  y-axis). If I try to find this line, I can draw something like that:
+</p>
+<div style="text-align:center">
+  <img src="{{ site.url }}/img/regression-line.png" alt="Even more scientific plot">
+</div>
+<p>
+  If this line has a slope <tt>m</tt> and a bias <tt>b</tt>, I can now use it to
+  do science: for any duck I meet, I can measure its size, multiply it by
+  <tt>m</tt> and add <tt>b</tt>, and that will give me how violent that duck is.
+  But here's the hard question: how do I get <tt>m</tt> and <tt>b</tt>?
+</p>
+<p>
+  In machine learning jargon, <tt>m</tt> and <tt>b</tt> are the
+  <em>parameters</em> of our model. We could have more than two; in fact, many
+  neural networks have thousands of parameters, if not millions or more. The
+  equations we fit are also more complex than the simple line I described here.
+  Lastly, we rarely start from a single input: here we have only the size, but a
+  more realistic models might take into account the age, the color, the habitat,
+  etc.
+</p>
+<p>
+  In any event, we are trying to <em>fit parameters to our data</em>. Let's go
+  back to our duck example. First things first: how <em>do</em> we get started?
+  Well, to begin with, we can just try anything: we'll pick random values for
+  <tt>m</tt> and <tt>b</tt>, and see how it goes.
+</p>
+<p>
+  But wait&mdash;how do we "see how it goes"? Here's where another important
+  concept comes in: we need some way of quantifying how wrong our model
+  currently is. In machine learning parlance, that's what we'd call a
+  <em>criterion</em> or a <em>loss</em>. With this loss function <tt>L</tt>, we
+  can compare the prediction of the model <tt>ŷ</tt> to the target value
+  <tt>y</tt>. In the specific case of our duckline, we are interested in
+  predicting numbers, so we can use something rather simple:
+  <tt>L(ŷ,&nbsp;y)&nbsp;=&nbsp;(y&nbsp;-&nbsp;ŷ)²</tt>, viz. the squared
+  difference between the prediction and the target. That function has some
+  interesting properties: (1) it is equal to 0 if and only if our prediction
+  matches the target perfectly, (2) the more we undershoot or overshoot the
+  target, the bigger the loss function will be. Hence, I can say it measures how
+  bad the model currently is.
+</p>
+<p>
+  Let's plot it and have a look:
+</p>
+<div style="text-align:center">
+  <img src="{{ site.url }}/img/error.png" alt="Even more scientific plot">
+</div>
+<p>
+  If the difference between <tt>ŷ</tt> and <tt>y</tt> is 0, I get 0. Anything
+  else will blow up to higher and higher values for my loss function. To sum up:
+  we made a first random guess for our parameters, and then we quantified how
+  bad that guess was. Now what?
+</p>
+<p>
+  That's where the calculus comes in. Let's compare two scenarios: one where the
+  model was very wrong, and one where it was less wrong. We can mark the error
+  of the model in each scenario, and then compute how much the loss is
+  increasing at this point. This we do by computing the derivative (i.e., the
+  tangent at that point): as a reminder, the derivative describes how much a
+  function increases at any point. Here's a visual aid:
+</p>
+<div style="text-align:center">
+  <img src="{{ site.url }}/img/error-tan1.png" alt="Bad model!">
+  <p><em>A very wrong guess</em></p>
+  <br/><br/>
+  <img src="{{ site.url }}/img/error-tan2.png" alt="Less bad model.">
+  <p><em>A less wrong guess</em></p>
+</div>
+<p>
+  As we can see, the less wrong guess will correspond to a flatter tangent. This
+  tells us that we are more likely to be near the absolute minimum loss: that is
+  to say, we're almost at 0. The other important bit to take notice of is that
+  the trend of the tangent also tells us something: if the slope is going
+  downwards, I'm overshooting the target value, whereas if it is going upward,
+  I'm undershooting it.
+</p>
+<p>
+  To clarify: by computing the derivative, we can get two very useful clues: how
+  far away am I from the minimum (by looking at how flat the tangent is), and
+  whether I should make smaller or bigger guesses (by looking at the trend of
+  the tangent). These two clues tell us how we should correct our first random
+  guess: the first tells us the magnitude of the change we should perform, the
+  second tells us the sign.
+</p>
+<aside>
+  <b>Note:</b> For the mathnerds that read this, our reasoning only holds if we
+  have a convex loss function. Otherwise, we are likely to go towards a local
+  minimum of the function, instead of the global minimum.
+</aside>
+<p>
+  The last thing we need now is how to translate these clues into concrete
+  updates to our parameters. That is to say: given these two clues, how do I
+  tweak <tt>m</tt> and <tt>b</tt>? The answer is that we use <em>partial
+  derivatives</em>: instead of computing the full derivative as we did above, we
+  compute the derivative of the loss with respect to each parameter, and other
+  parameters and inputs are treated as constant values.
+</p>
+<p>
+  In other words: we look at how we should change a parameter to get a less
+  wrong answer, <em>if the only thing we could change was this single
+  parameter</em>. Hence the clues we get from the partial derivative apply
+  specificly to this one parameter, and we can use the flatness to determine how
+  big of a change we should do, and the trend to tell us whether we should make
+  that change towards more negative values or towards more positive values.
+</p>
+<p>
+  This gives us a way to update our initial random guess. Keep in mind that this
+  is just an update: in practice, we'll have to go through the whole process of
+  computing the loss and the partial derivatives a great number of times before
+  the model finally finds the 0, or, as we say, <em>converges to a
+  solution</em>.
+</p>
+<p>
+  This duck example was fairly silly. One point that I have completely ignored
+  is that we don't work with number in NLP: instead, we work with words, or
+  parts of speech, or syntactic trees, etc. This means that in the general case,
+  what we predict is a probability distribution over all possible words, and the
+  loss function is generally one that quantifies how two distributions differ.
+  More on that in future posts! You've probably suffered enough math for today.
+</p>
+<p>
+  The other thing that I really should point out as early as possible is that
+  real machine learning applications have real consequences. The main issue is
+  that neural networks will use any random correlation in your dataset to
+  converge to a solution. If you want to predict where crime is likely to occur
+  using police reports, you're in fact going to predict where overpolicing
+  occurs. If you want to build an application that unlocks a phone by scanning
+  the user's face, but your dataset is full of white dudes between 20 and 35,
+  then your application will not work with any other demographic. I'll try talk
+  about this as well.
+</p>
+<p>
+  See you next time.
+</p>
+<aside>
+  <b>Note:</b> To reward the happy few, here are the <em>facts</em> behind all
+  this science.<br/>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/JTjoct0jllw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</aside>
