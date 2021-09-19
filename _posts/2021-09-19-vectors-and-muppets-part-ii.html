@@ -1,0 +1,106 @@
+---
+layout: custom_post
+title: "Vectors and Muppets, part II"
+category: "my-phd-explained-to-my-folks"
+date: 2021-09-19
+excerpt: Hail thy muppet and master!
+---
+<p>
+  In the last post, I mentioned two NLP embeddings models: word2vec and BERT. I
+  haven't talked in much detail of the latter yet. In a nutshell, BERT vectors
+  are to word2vec vectors pretty much what the Starkiller is to the Deathstar,
+  or what Borgs are to Klingons. It's bigger, the producers had a bigger budget,
+  it's more efficient at what it does. In a word: supersized.
+</p>
+<p>
+  That is not to say that BERT models are just a scaled up version of word2vec.
+  From a purely engineering standpoint, BERT models are what we call
+  "Transformers". A Transformer is a type of neural network, in the same sense
+  that a Ferrari is a type of car. In our jargon, we call types of networks
+  "architectures". Transformers, in particular, have been found to perform
+  impressively well on a wide range of tasks, from machine translation to
+  language modeling&mdash;the task of predicting the next word in a sentence.
+</p>
+<p>
+  On the other hand, word2vec is based on a log-linear classifier
+  architecture&mdash;that's a very simple, straightforward class of neural
+  networks. The two main differences between a Transformer and a log-linear
+  classifier is that a) Transformers are a lot more complex and b) Transformers
+  can take as input sequences of arbitrary length, whereas a log-linear
+  classifier can only process input of a fixed size.
+</p>
+<aside >
+  <b>Note:</b> Obviously, there are other differences. I'm doing away with a lot
+  of the technical details; e.g., Transformers actually have a maximum length
+  they can process (generally, they can only handle up to 512 words at a time).
+</aside>
+<p>
+  The different characteristics of the two architectures entail that the
+  computation of word vectors in a BERT model will be quite different than what
+  we saw with word2vec. In particular, in word2vec, we went about our business
+  one word at a time, trying to reconstruct the context around one word at each
+  step. On the other hand, Transformers like BERT can handle inputs of arbitrary
+  length: hence I can feed the entire sentence at once in my model. This means
+  that the vectors we get from a BERT model are word vectors that take into
+  account which sentence this word occurs in. We have unique vector
+  representations for a word in a sentence. Instead of representing the word
+  "tie" with one vector regardless of all the contexts it occurs in, we'll
+  represent the word "tie" differently in different sentences  such as "I tie my
+  shoes" or "My dad wears a silly tie".
+</p>
+<aside>
+  <b>Note:</b> In linguistic parlance, BERT yields word-token vectors, whereas
+  word2vec yields word-type vectors.
+</aside>
+<p>
+  The way we train BERT models is technically different from how we train
+  word2vec models, but it does closely resemble the CBOW task I mentionned last
+  time. Basically, we train the model to solve a fill-in-the-blanks exam. We
+  start by selecting a few words at random, we then replace them with a blank.
+  So from a sentence such as "<em>The most fearsome animal is the underfed
+  mallard</em>", we would create a blanked input such as "<tt>The most ____
+  animal is ____ underfed mallard</tt>". We then pass that blanked-out input to
+  the BERT model we train. BERT's task is to fill those blanks and guess what
+  words correspond to the blanks <tt>____</tt> in the original sentence.
+</p>
+<p>
+  The last point worth mentioning is the hype. BERT models and their variants
+  took the top of the charts very, very quickly. Any benchmark we made, BERT
+  embeddings could seemingly solve it to a high degree of accuracy. The key
+  point is that, unlike word2vec vectors which were useful as inputs in more
+  complex models, BERT models can often be plugged in whatever task you fancy
+  with very minimal change. Want to guess which customer reviews express a
+  negative feedback? Get a pre-trained BERT model, retrain it for a smidge
+  longer to discriminate between postive and negative comments, <em>et voilà!
+  The YELP, she is done</em>.
+</p>
+<p>
+  Another consequence of the hype is the popularity of it. Transformer models,
+  as I pointed out earlier, are complex. They are in fact "black boxes", like
+  most other neural network architectures. We don't have a satisfactory
+  explanation of how they process the input data we feed them. We're only able
+  to observe what goes in and what goes out (and that what goes out can be
+  generally impressive). BERT is a very new model (it was proposed in 2018), so
+  we haven't had the time to build a thorough understanding of its workings and
+  its quirks. Nonetheless, research is being conducted: there's a whole cottage
+  industry built around understanding what BERT models do, how they do it, why
+  they do it. That field of study is called <em>BERTology</em> (I kid you not).
+  Some of the fun findings they suggest is that BERT models would be implicitly
+  modeling the syntax of the data we give it as input.
+</p>
+<p>
+  Another side effect of the hype is the very impressive number of models
+  inspired from BERT. We have BERT and BART and alBERT and RoBERTA and ELECTRA
+  and PEGASUS and mBERT and mBART and distilBERT and CamemBERT and BERTje and
+  herBERT and BARThez and FlauBERT and BETO and UmBERTo and BioBERT and PhoBERT
+  and FinBERT and RuBERT and GilBERTo. As a fun exercise, you can try to guess
+  which language or literary genre each of those correspond to. Full disclosure:
+  I would have to look some of these up.
+</p>
+<p>
+  Anyways, my point is that BERT is popular. Obviously, a plug-and-play
+  high-performance NLP model is bound to bring a lot of hype. To be fair,
+  there's a lot to unpack about the downside of BERT models, and it's a rather
+  depressing topic. So I'll just tackle that topic another time, and leave it at
+  that for today.
+</p>
