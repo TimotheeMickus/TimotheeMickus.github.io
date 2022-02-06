@@ -1,0 +1,128 @@
+---
+layout: custom_post
+title: "Comparing Embeddings and Definitions"
+category: "my-phd-explained-to-my-folks"
+date: 2022-02-06
+excerpt: We've talked about word vectors. We've talked about dictionaries. How do we compare them?
+---
+<aside class="">
+  <b>Note:</b> I'm back. The last few months have been hectic, it turns out that
+  writing a PhD dissertation is time-consuming. Who would have thought?
+</aside>
+<p>
+  We've talked about word vectors. We've talked about dictionary definitions.
+  What's their common point? One thing you could argue is that they both purport
+  to describe word meaning. That is fairly obvious when it comes to
+  definitions&mdash;I don't think I need to do much convincing there, that's
+  just what dictionaries are.
+</p>
+<p>
+  It's perhaps less obvious that we can expect word vectors to be meaning
+  representations as well. There are a number of good arguments for that, but
+  the one piece of evidence you should keep in mind here is that we don't
+  associate words at random when we speak&mdash;shocking, I know! In fact, we
+  use words based on what they mean. So we can expect that the context in which
+  we use a word (i.e., what we called its distribution) tells us something of its
+  meaning. That is something we've discussed at greater lengths in a previous post
+  (<a href="https://timotheemickus.github.io/my-phd-explained-to-my-folks/2021/07/25/the-basics-of-distributional-semantics.html">post
+  #4 here</a>).
+</p>
+<p>
+  But is the meaning of word vectors the same as the meaning of definitions?
+</p>
+<p>
+  I know this sounds like a gibberish question. There are two key points I'd
+  like you to keep in mind before you start booing too loudly. First, the word
+  vectors that we have are constructed from large amounts of data using software.
+  Moreover, they use estimation techniques like gradient descent
+  (<a href="https://timotheemickus.github.io/my-phd-explained-to-my-folks/2021/08/29/gradient-descent-into-madness.html">see
+  post #8 here</a>). These techniques are neither deterministic nor precise: we
+  have no guarantee that what we end up with is the most optimal product we'd
+  set out for.
+</p>
+<p>
+  The second point I'd like you to keep in mind is that nobody knows what meaning
+  is in the first place. Or at least it's very much an open debate in linguistics.
+  One thing you can say for sure is that the "meaning of sentences" and the
+  "meaning of words" are different kinds of beast, as they have very different
+  properties&mdash;for instance, you can say whether a sentence is true or false,
+  but it's entirely meaningless to ponder whether that sentence is a synonym of
+  "gorse".
+</p>
+<aside class="">
+  <b>Note:</b> Here's a massive old can of worms that we're going to abruptly
+  shelve away because I don't have time for this right now! <br>
+  First, truth does not apply to all sentences. Here's a simple example:
+ "Which of my pet rabbits has black and white spots?" This sentence is neither
+ true nor false. It has a true answer (he's called Midas, and the most acute
+ of my readers might have seen him in a picture), but in and of itself, a
+ question is neither true nor false. <br>
+ Second, we also have declarative sentences that are neither true nor false in
+ the classical sense of "saying something that matches with how the world is":
+ the classic example being "The king of France is bald." for instance. There's
+ no such thing as a king of France, so it's hard to say whether that sentence
+ is true or false&mdahs;it presupposes facts that are false, but does that
+ make it false or simply unrelated to the real world? and what about "Crusoe
+ was lost on an island."? that also presupposes false facts (namely, that
+ Robinson Crusoe existed), and yet we're not so eager to say it's false.<br>
+ Third, we have words like "unicorns" or "wizards" or "dragons" which have no
+ counterpart in the real world. As such, when you use them, you can end up
+ with a sentence that will necessarily presuppose false facts. There's a
+ distinction between what using the word in a sentence entails and what this
+ word itself means.<br>
+ Fourth, there are languages (many, in fact), where single words can be
+ sentences all on their own. We have a bunch in English as well, e.g., "Yes"
+ or "No" as a reply to some question. But some languages like Nahuatl turn
+ that to eleven: the word "ticitl" means "doctor" or "that person is a doctor",
+ depending on context, and (if I remember correctly) the word
+ "onamechmonaquilizinco" is a conjugated form of the verb "namiqui" (which
+ means "to meet") that roughly translates to "I came here to meet you with the
+ utmost respect." Or something like that, I'm not an expert in Nahuatl. We
+ call these languages synthetic or polysynthetic, if you want to look it up.
+</aside>
+<p>
+  We don't know what "word-meaning" is. Therefore, we're not certain that the
+  concept of meaning that we implicitly rely on when we read or make up
+  definitions is any different from the concept of word-meaning that we can
+  study through distribution. It's not a trivial question without consequences
+  either. Whenever we have two different scientific accounts for the same set of
+  facts, it's worth sitting down to see whether that difference is merely
+  cosmetic or whether it has deeper implications.
+</p>
+<p>
+  For instance, heliocentrism and describing the movement of planets using
+  epicycloids (that's saying they trace spirograph patterns in the night sky,
+  basically) is at the end of the day more or less equivalent mathematically
+  speaking. What changes here is the optics of it: heliocentrism is a lot more
+  economical, and means we don't have to treat Earth in a special way&mdash;we
+  apply the same rules to this planet and to all the other. Don't get me wrong,
+  optics <em>do</em> matter: having the right scientific framweork helps a lot
+  when trying to build on previous results and theories.
+</p>
+<aside class="">
+  <b>Note:</b> The hackneyed example for that idea states that "Hesperus (aka.
+  the Evening Star) is Phosphorus (aka. the Morning Star)," both of these being
+  names given to Venus depending on when it appears in the night sky. That's a
+  fairly overused example which we owe to Frege's <em>Über Sinn und
+  Bedeutung</em>.
+</aside>
+<p>
+  The second type of difference is more similar to that between Newtonian
+  gravity and Enstein's general relativity. These theories are not mathematically
+  equivalent: they predict different orbits for the planet Mercury. So you can't
+  just say that they mean the same thing: at most one of the two can describe
+  accurately the motions of planets; simply put, they describe different facts.
+</p>
+<p>
+  Going back to word-meaning, it's worth sitting down and asking which of the
+  two situations we're in. Are definitions and word distributions equivalent
+  descriptions of meaning? If so, then that would make for a very enlightening
+  difference in optics which might help us to better understand what
+  word-meaning is, fundamentally speaking. If not, then we'll have two competing
+  descriptions of word-meaning, and we'll have to look into whether either of
+  those does not match reality.
+</p>
+<p>
+  The next few posts are going to be about methods to compare word embeddings and
+  definitions, but I'll stop here for today. See you next week!
+</p>
