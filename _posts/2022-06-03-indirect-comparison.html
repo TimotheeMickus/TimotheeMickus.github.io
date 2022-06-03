@@ -45,7 +45,7 @@ excerpt: Let's bring out the big guns since the peashooter didn't help
   The converse task does not exist per se, but you can think of it as a
   <em>reverse dictionary</em> of sort. A reverse dictionary is a plain old
   dictionary, but reversed: you're looking up a word by thinking up what its
-  definition should be, and looking for that within the document. There's a few
+  definition should be, and looking for that within the document. There are a few
   use-cases where it might be useful: mostly for solving crosswords and writing
   prose.
 </p>
@@ -95,13 +95,12 @@ excerpt: Let's bring out the big guns since the peashooter didn't help
   vectors as input. The boxplots for each language are the participants' scores.
 </p>
 <p>
-  There's two key points to note. First: we're ranking models sing BLEU scores.
-  BLEU is a metric that, informally speaking, counts the number of tokens and/or
-  sequences of tokens that match in the produced output and the target
-  definition. The minimum value it can get is 0, the best value would be 1;
-  higher is better. Here, what you might not notice is that the scores are
-  extremely low&mdash;so low that the scores are roughly on par with nonsensical
-  random strings of tokens.
+  Two key remarks. First: we're ranking models sing BLEU scores. BLEU is a
+  metric that, informally speaking, counts the number of tokens and/or sequences
+  of tokens that match in the produced output and the target definition. The
+  minimum value it can get is 0, the best value would be 1; higher is better.
+  Here, what you might not notice is that the scores are extremely low&mdash;so
+  low that the scores are roughly on par with nonsensical random strings of tokens.
 </p>
 <p>
   On the other hand, the other thing to remark is that we do get systematically
@@ -128,7 +127,7 @@ excerpt: Let's bring out the big guns since the peashooter didn't help
 <p>
   The second bit of evidence we can discuss is that massive neural networks tend
   to not be very good at discriminating between different types of embeddings.
-  By that, I mean that there's so many knobs and dials to turn that a network
+  By that, I mean that there are so many knobs and dials to turn that a network
   can overcompensate for any defects in your embeddings. That's something we can
   see if we compare errors across multiple benchmarks for embeddings. For
   instance, if you recall the word analogy task we discussed a few posts ago
