@@ -1,0 +1,133 @@
+---
+layout: custom_post
+title: "Take me Down to the Paradigm City"
+category: "my-phd-explained-to-my-folks"
+date: 2022-08-30
+excerpt_separator: <!--more-->
+---
+<p>
+  We need to talk about linguistic structuralism. I swear it won't be as painful
+  as it sounds. Then again, I said the same I tricked you into math a few posts
+  ago.
+</p>
+<!--more-->
+<p>
+  In the previous post, when we were comparing definitions and word vectors with
+  neural networks, I pointed out that we had perhaps got our starting assumption
+  wrong: perhaps there's something very different between embeddings and vectors
+  and that's why it's so hard to get a decent result out of it. The real
+  question we should ask here is: what is a word vector, really? Previously I
+  talked about Zellig Harris and his distributional semantics, but I haven't
+  really delved in the specifics. Let's delve, shall we?
+</p>
+<aside class="">
+  <b>Note:</b> In this post and the next one, I am going to relay and discuss
+  remarks made by Magnus Sahlgren in M. Sahlgren, 2008, "The distributional
+  hypothesis". Link to the paper
+  <a href="https://www.diva-portal.org/smash/get/diva2:1041938/FULLTEXT01.pdf">here</a>.
+</aside>
+<p>
+  For starters, some bit of context. Harris was born in October 1909 in Balta,
+  present day Ukraine, migrated to Pennsylvania in 1913 and died in May 1992 in
+  New York. He was an active researcher for about half a century: he wrote his
+  dissertation in the thirties, and was still writing papers in the late
+  eighties. He was Chomsky's supervisor, and grew up in a research landscape
+  very much influenced by Edward Sapir and Leonard Bloomfield.
+</p>
+<aside class="">
+  <b>Note:</b> I just realized that this name dropping might not mean much to
+  people not familliar with (US) linguistics. Here's the cliffnotes:
+  <ul>
+    <li><b>Noam Chomsky</b> is more or less the linguist Einstein, in that he's
+    a public figure that has reshaped how we think of linguistics. He's the
+    father figure of generative grammar, a movement that tries to provide a
+    mathematical fornmalism to explain language. Not uncontroversial (one of
+    these day you'll hear me rant against the man, if you haven't already), but
+    definitely a major figure in linguistics. Nowadays he's also a very vocal
+    political activist championing far-left and green ideas.</li>
+    <li><b>Edward Sapir</b> was one of the students of Franz Boas and an early
+    figure in American linguistics. He was one of the first linguists/anthropologists
+    to study indegenous languages of America. His chief interest was in how
+    language and culture correlate, and you might therefore have heard of the
+    Sapir-Whorf hypothesis. That's a rant for another time.</li>
+    <li><b>Leonard Bloomfield</b> is a major figure of US linguistics, known to
+    have advocated a position called <em>distributionalism</em> (hint hint). One
+    of his concerns was how to make linguistic observations in a scientific way.
+    </li>
+  </ul>
+</aside>
+<p>
+  One of the things that really shines through when reading his papers and books
+  is that Harris was quite obsessed with methodology. His whole book <em>Methods
+  in structural linguistics</em> is "a discussion of the operations the linguist
+  may carry out in the course of his investigations", as he puts it. He tried to
+  provide a standard way of doing linguistics, so that one could replicate any
+  linguistic observation, as with any other empirical science.
+</p>
+<p>
+  The other key point you should keep in mind is that structuralism was more or
+  less the dominant theory when Harris started his career. Structuralism is the
+  idea that language can be described as a structured system: we don't just put
+  words together at random, there are rules to this mess. One such rules, and
+  the one we're interested in today, is that of syntagmatic and paradigmatic
+  axes.
+</p>
+<p>
+  The idea of a syntagmatic and paradigmatic axes comes from Ferdinand de
+  Saussure. The idea is that there's two types of relations between words. The
+  first, and easier one to explain, is the type of relations you have between
+  words in the same sentence. Suppose we have a sentence, say:
+</p>
+<aside class="">
+  <em>I have stared the devil in the eye.</em>
+</aside>
+<p>
+  If we take any two words from this sentence, then we can say that they are in
+  a syntagmatic relationship. Some syntagmatic relationships are more
+  constraining than others: the word 'have' in our example above is requiring us
+  to use a past participle 'stared'. In Sahlgren's words, syntagmatic relations
+  are relations <em>in praesentia</em>: choosing to use one word (or one word
+  form) impacts what other words you have in your sentence.
+</p>
+<p>
+  Conversely, there are things that are not determined purely by the syntagmatic
+  relations&mdash;to a certain extent, we also make decisions about the words we
+  use. For instance, I could have used another word instead of 'devil', say:
+</p>
+<aside class="">
+  <em>I have stared the duck in the eye.</em>
+</aside>
+<p>
+  Here, to quote Sahlgen again, the relation between 'devil' and 'duck' is a
+  relation <em>in absentia</em>. The choice I made to use the word 'devil'
+  prevents me from also using the word 'duck' in the same slot, so to speak.
+  In fact, I could create a template sentence with that slot empty:
+</p>
+<aside class="">
+  <em>I have stared the <u><span style='width:5em!important'>&nbsp;</span></u> in the eye.</em>
+</aside>
+<p>
+  and then ask the following question: Which word could I fill this slot with? I
+  could also consider this: What do words that can fill this slot have in
+  common? Broadly, we say that the relationship between all these potential
+  words is paradigmatic.
+</p>
+<p>
+  Now, you astute reader may ask&mdash;how does this relate to the work of
+  Harris? First and foremost, this distinction between syntagmatic and
+  paradigmatic relations can also be found in the distributional semantics
+  framework we discussed a few posts back. Harris uses a slightly different
+  terminology: he calls syntagmatic relations '(serial) dependency' and
+  paradigmatic relations 'substitutability'. There are some theoretical
+  differences, but on the whole substitutability in distributional semantics is
+  very much related to the notion of a paradigmatic relation between words.
+</p>
+<p>
+  And the even more astute reader may look back at the beginning of this post
+  and exclaim&mdahsBut how does all this linguistic jargon relate to your
+  initital question? What does this tell us of what a word vector is? The
+  answer, and the topic of the next post in this series, is that you can frame
+  most if not all distributional semantics models can be framed as mathematical
+  estimators of distributional substitutability&mdahs;to put it plainly, all the
+  vectors we get come from machines that learn how to fill in word slots.
+</p>
