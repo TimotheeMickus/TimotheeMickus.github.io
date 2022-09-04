@@ -11,9 +11,8 @@ excerpt_separator: <!--more-->
 <blockquote cite="">
   Most if not all distributional semantics models can be framed as mathematical
   estimators of distributional substitutability&mdash;to put it plainly, all the
-  vectors we get come from machines that learn how to fill in word slots.
+  vectors we get come from machines that learn how to fill in word slots<!--more-->.
 </blockquote>
-<!--more-->
 <p>
   I'd suggest going back to the previous posts on how to derive word vectors (in
   particular <a href="https://timotheemickus.github.io/my-phd-explained-to-my-folks/2021/07/31/counting-to-meaning.html">#5</a>,
@@ -48,10 +47,10 @@ excerpt_separator: <!--more-->
   word in this given context. In other words, we train the model so that the
   following equation:
 </p>
-<blockquote>
+<aside>
   p(&nbsp;____&nbsp;=&nbsp;<tt>X</tt>&nbsp;|&nbsp;"<tt>The most ____ animal is
   the underfed mallard</tt>"&nbsp;)
-</blockquote>
+</aside>
 <p>
   is maximized when <tt>X</tt> corresponds to a word we actually observe in this
   context, such as "<tt>violent</tt>"  or "<tt>fearsome</tt>". The model's guess
@@ -80,17 +79,17 @@ excerpt_separator: <!--more-->
   how likely it is that a word is substitutable in a given context. We can come
   up with a fancy equation to celebrate our finding (I insist):
 </p>
-<blockquote>
+<aside>
   p(&nbsp;<em>t</em>&nbsp;|&nbsp;<em>c</em>&nbsp;)
-</blockquote>
+</aside>
 <p>
   or the probability assign to a target word <em>t</em> given some context
   <em>c</em>. From which we can also give an equation for distributional
   substitutability (because <em>who</em> doesn't like equations, am I right?):
 </p>
-<blockquote>
+<aside>
   &forall;&nbsp;<em>c</em>&nbsp;&nbsp;p(&nbsp;<em>x</em>&nbsp;|&nbsp;<em>c</em>&nbsp;)&nbsp;=&nbsp;p(&nbsp;<em>y</em>&nbsp;|&nbsp;<em>c</em>&nbsp;)
-</blockquote>
+</aside>
 <p>
   We'd say that <em>x</em> and <em>y</em> are always substitutable if, for all
   contexts <em>c</em> we can find, the model assigns them equal probability.
@@ -101,26 +100,27 @@ excerpt_separator: <!--more-->
   spit out some eqution of the form of p(&nbsp;<em>t</em>&nbsp;|&nbsp;<em>c</em>&nbsp;).
   Most neural network word embedding models are trained on objectives that we
   can reformulate into something that looks like this. This isn't entirely a
-  lucky accident: it turns out that if you want to train from raw text without
-  having to manually annotate your training data, then this conditional
-  probability is one of the few solutions you have. Older non-neural models (i.e.,
-  that pre-date word2vec) are generally less easy to convert into this format.
-  I should also remark that Magnus Sahlgren, whose paper I previously mentioned,
-  does point out to a family of models that don't really fit in with this
-  approach. TL;DR: it's complicated.
+  lucky accident: it turns out that if you want to train some network from raw
+  text without having to manually annotate your training data, then using this
+  conditional probability is one of the few solutions you have. Older non-neural
+  models (i.e., that pre-date word2vec) are generally less easy to convert into
+  this format. I should also remark that Magnus Sahlgren, whose paper I
+  previously mentioned, does point out to a family of models that don't really
+  fit in with this approach.<br>
+  TL;DR: it's complicated.
 </aside>
 <p>
   Why is it a big deal to have an equation for all of this stuff? Well, ask
-  yourself the same question with physics: why is it a ig deal that we have some
+  yourself the same question with physics: why is it a big deal that we have some
   equation for gravity? It lets us make predictions that we can then compare to
-  acrual data, to see how our theory and our models actually fare. We have some
+  actual data and see how our theory and our models actually fare. We have some
   idea that word embedding models are estimators of distributional substitutability:
   now we'll have to test it.
 </p>
 <p>
   This will have to wait until the following post. Here's a sneak peek of what's
-  to come.
+  to come:
 <p>
 <p>
-  Squids. And squirrels. 
+  Squids. And squirrels.
 </p>
