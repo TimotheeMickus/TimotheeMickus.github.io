@@ -1,0 +1,126 @@
+---
+layout: custom_post
+title: "Slot Machines"
+category: "my-phd-explained-to-my-folks"
+date: 2022-08-30
+excerpt_separator: <!--more-->
+---
+<p>
+  Last time on this series of blog posts:
+</p>
+<blockquote cite="">
+  Most if not all distributional semantics models can be framed as mathematical
+  estimators of distributional substitutability&mdash;to put it plainly, all the
+  vectors we get come from machines that learn how to fill in word slots.
+</blockquote>
+<!--more-->
+<p>
+  I'd suggest going back to the previous posts on how to derive word vectors (in
+  particular <a href="https://timotheemickus.github.io/my-phd-explained-to-my-folks/2021/07/31/counting-to-meaning.html">#5</a>,
+  <a href="https://timotheemickus.github.io/my-phd-explained-to-my-folks/2021/09/05/vectors-and-muppets-part-i.html">#9</a>
+  and <a href="https://timotheemickus.github.io/my-phd-explained-to-my-folks/2021/09/19/vectors-and-muppets-part-ii.html">#10</a>)
+  since all of what we discussed then will be relevant now.
+</p>
+<p>
+  If all of it is fresh in your mind, you should be able to make the connection
+  with the previous post easily. I'll focus on BERT here for simplicity, but what
+  I'm about to discuss also applies to other models&mdash;in all, BERT happens to
+  be more straightforward here.
+</p>
+<p>
+  As you recall, BERT is trained  to fill-in-the-blanks, so if I pass it a
+  sentence with a blank token, such as:
+</p>
+<blockquote>
+  <tt>The most ____ animal is the underfed mallard</tt>
+</blockquote>
+<p>
+  then it has to come up with plausible fillers for this blank slot&mdash;say
+  <tt>violent</tt>, <tt>vicious</tt>, <tt>dangerous</tt>... As you can see,
+  there's a bunch of plausible words you could put in that slot. In fact, valid
+  slot-filling words correspond quite exactly to a set of words in a
+  paradigmatic relation, as we saw in the previous post. Or to use Harris'
+  jargon, we'd say that valid words here should be distributionally substitutable.
+</p>
+<p>
+  There's one more thing we get out of this: what we actually do when we train a
+  BERT model, is that we task it with maximizing the probability of the masked
+  word in this given context. In other words, we train the model so that the
+  following equation:
+</p>
+<blockquote>
+  p(&nbsp;____&nbsp;=&nbsp;<tt>X</tt>&nbsp;|&nbsp;"<tt>The most ____ animal is
+  the underfed mallard</tt>"&nbsp;)
+</blockquote>
+<p>
+  is maximized when <tt>X</tt> corresponds to a word we actually observe in this
+  context, such as "<tt>violent</tt>"  or "<tt>fearsome</tt>". The model's guess
+  as to what should be filled in this blank corresponds to whichever word <tt>X</tt>
+  maximize the equation above. In jargonese, we say that models are trained to
+  maximized the probability of the masked word conditioned on its context of
+  occurrence.
+</p>
+<p>
+  This little mathematical detail has two consequences. First, we don't actually
+  get a single answer from a model such as BERT: rather, we can probe the model
+  for <em>classes</em> of words. Second, the modle doesn't actually produce a
+  yes/no answer: instead, it assign probability scores to all possible words.
+  Let's connect back these two points to our previous observations on
+  distributional substitutability: if we expect a class of words to equally fit
+  in a given slots&mdash;if any if the words <tt>violent</tt>, <tt>vicious</tt>,
+  <tt>dangerous</tt>, <tt>fearsome</tt> could fit&mdash;then the model should
+  assign roughly the same probabilities to all of these words. Conversely, the
+  model should also assign lower probabilities to less likely words (such as
+  <tt>cuddly</tt> or <tt>eloquent</tt> in the example above) and zero probability
+  to syntagmatically forbidden words (say <tt>the</tt>, <tt>of</tt> or
+  <tt>window</tt>).
+</p>
+<p>
+  In other words: distributional models can be thought of as models that learn
+  how likely it is that a word is substitutable in a given context. We can come
+  up with a fancy equation to celebrate our finding (I insist):
+</p>
+<blockquote>
+  p(&nbsp;<em>t</em>&nbsp;|&nbsp;<em>c</em>&nbsp;)
+</blockquote>
+<p>
+  or the probability assign to a target word <em>t</em> given some context
+  <em>c</em>. From which we can also give an equation for distributional
+  substitutability (because <em>who</em> doesn't like equations, am I right?):
+</p>
+<blockquote>
+  &forall;&nbsp;<em>c</em>&nbsp;&nbsp;p(&nbsp;<em>x</em>&nbsp;|&nbsp;<em>c</em>&nbsp;)&nbsp;=&nbsp;p(&nbsp;<em>y</em>&nbsp;|&nbsp;<em>c</em>&nbsp;)
+</blockquote>
+<p>
+  We'd say that <em>x</em> and <em>y</em> are always substitutable if, for all
+  contexts <em>c</em> we can find, the model assigns them equal probability.
+</p>
+<aside class="">
+  <b>Note:</b> When I was writing above that BERT is just more convenient for
+  this demonstration, I was refering to the fact that it's easier to get it to
+  spit out some eqution of the form of p(&nbsp;<em>t</em>&nbsp;|&nbsp;<em>c</em>&nbsp;).
+  Most neural network word embedding models are trained on objectives that we
+  can reformulate into something that looks like this. This isn't entirely a
+  lucky accident: it turns out that if you want to train from raw text without
+  having to manually annotate your training data, then this conditional
+  probability is one of the few solutions you have. Older non-neural models (i.e.,
+  that pre-date word2vec) are generally less easy to convert into this format.
+  I should also remark that Magnus Sahlgren, whose paper I previously mentioned,
+  does point out to a family of models that don't really fit in with this
+  approach. TL;DR: it's complicated.
+</aside>
+<p>
+  Why is it a big deal to have an equation for all of this stuff? Well, ask
+  yourself the same question with physics: why is it a ig deal that we have some
+  equation for gravity? It lets us make predictions that we can then compare to
+  acrual data, to see how our theory and our models actually fare. We have some
+  idea that word embedding models are estimators of distributional substitutability:
+  now we'll have to test it.
+</p>
+<p>
+  This will have to wait until the following post. Here's a sneak peek of what's
+  to come.
+<p>
+<p>
+  Squids. And squirrels. 
+</p>
