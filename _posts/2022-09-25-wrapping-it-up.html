@@ -1,0 +1,108 @@
+---
+layout: custom_post
+title: "Wrapping it up"
+category: "my-phd-explained-to-my-folks"
+date: 2022-09-25
+excerpt_separator: <!--more-->
+---
+<p>
+  Well, it's time to finish up this series of posts. I've covered most of what
+  is in my dissertation. Let's finish things up with a brief recap, shall we?
+</p>
+<!--more-->
+<p>
+  My PhD was in computational linguistics, i.e., making math models of language.
+  More precisely, I've worked on word embeddings: vectors that represent words,
+  which are computed using neural networks from co-occurrence data. At the end
+  of the day, it's unclear whether these word vectors correspond to word meaning.
+</p>
+<p>
+  We've approached the problem in two broad ways. First, we've looked at whether
+  we could convert word embeddings into some other type of meaning descriptions,
+  namely definitions. Second, we studied what sort of theoretical expectations
+  we should have for word embeddings, given how they're computed. In both cases,
+  we didn't get clear cut results that strongly hint at one answer or the other.
+  That's how science works: more often than not, it's just more complicated than
+  what you intially expect. Definitions don't seem to be easy to generate using
+  an embedding alone, and it's unclear whether how different two definitions are
+  tells you much about how different the two related embeddings ought to be.
+  When we look at what the theory says, we see that there's a large gap between
+  how humans perform and how neural network models perform, how they solve the
+  same tasks, and what they find difficult. In a nutshell, the more I look into
+  it, the more I feel we should be a abit more careful, theoretically speaking,
+  before we say that embeddings capture and convey word meaning.
+</p>
+<p>
+  There are some aspects of my dissertation I didn't cover, mostly because I
+  tried to spare you the math. There are two key points that can be made if you
+  throw linear algebra and/or matrix calculus at this problem. The first is that
+  word vectors, <em>because they are vectors</em>, will have different behaviors
+  depending on how you set them up. The number of dimensions your vector has,
+  for instance, implies something about the average angle you can expect between
+  two random vectors. The second thing to mention is that word embeddings,
+  <em>because they are computed from neural networks</em>, will also encode some
+  non-linguistic stuff that mostly relate to the inner workings of the network.
+</p>
+<p>
+  With that in mind, what did I manage to show?
+</p>
+<p>
+  I think I made a coherent argument that definitions and embeddings are very
+  different beasts. However there are a few things to stress here. First, it's
+  very naive to assume that word meanings resemble dictionary definitions in any
+  ways. Definitions are helpful to understand the meaning of a word, but they
+  are not the meaning of the word itself. The
+  <a href="https://lingthusiasm.com/post/161572785861/transcript-lingthusiasm-episode-8-people-who-make">lingthusiasm podcast</a>
+  has a nice way of putting it: dictionaries or the "help documentation" of a
+  language, not the language itself. So on the whole, arguing that word
+  embeddings should describe meaning <em>like dictionary definitions</em> is a
+  bit misleading: it's actually a much weaker claim than what you might think.
+  Perhaps the best way to frame this research question is that I've looked into
+  whether you should take word embeddings <em>as seriously as</em> dictionary
+  definitions.
+</p>
+<p>
+  If not definitions, then what should we compare word embeddings to? From a
+  purely practical standpoint, online dictionaries are fairly easy to find and
+  we can easily gather enough definitions to train a neural network. Neural nets
+  have the downside that they require stupidly large amounts of data to get
+  anywhere close to decent: we're talking tens or hundreds of thousands of
+  examples, if not millions. That's a number of definitions you can find online,
+  more or less&mdash;that's roughly what you can find on Wiktionary, for
+  instance. So if we want to compare word vectors to something else than a
+  definition, we're likely going to have to ditch neural networks altogether,
+  because it's likely we're not going to have enough data to train them
+  properly. One thing that if often done in the literature is to ask people to
+  rate how similar two words are&mdash;like on a scale to one to five, how
+  similar are "democracy" and "differentiable"? How about "squid" and "squirrel"?
+  Or "gem" and "jewel"?&mdash;and then compare these similarity ratings with how
+  similar the corresponding word vectors are.
+</p>
+<p>
+  The second thing I believe my dissertation did show is that there's another,
+  more theoretically coherent way of comparing word embeddings to other things,
+  and that's by ditching the vectors altogether and using their capabilities to
+  estimate how easy it is to substitute one word for another in a given context.
+  I'm not sure whether I'll manage to sell the idea to colleagues, but after the
+  last series of blog posts, you should have a decent idea of why I think this
+  is a good idea, and how it can actually be used to compare word embeddings and
+  humans. In all likelihood, I am going to continue research in that direction.
+</p>
+<p>
+  And what's next?
+</p>
+<p>
+  Well, for this series of blog post, that's it. I've covered most of what I did
+  during my PhD, and tried to make it as easy to understand as I could. I might
+  try to talk about my post-doc next, but that's still a fairly vague idea.
+</p>
+<p>
+  And with that&mdash;that's all, folks!
+</p>
+<p>
+  PS: here's to the happy few:
+</p>
+
+<aside >
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/UL0jUabC1eI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</aside>
