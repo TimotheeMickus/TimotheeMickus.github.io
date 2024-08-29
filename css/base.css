@@ -126,3 +126,20 @@ blockquote {
   border-left: 4px solid #CCC;
   padding-left: 8px;
 }
+
+.projects-container {
+ display: flex;
+ height: 100%;
+ width: 100%;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+}
+
+.square {
+ aspect-ratio: 1/1;
+ flex: 0 1 55px;
+ background-color: blue;
+ margin: 10px;
+}
+
