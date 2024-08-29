@@ -141,5 +141,6 @@ blockquote {
  flex: 0 1 55px;
  background-color: blue;
  margin: 10px;
+ max-wdiths: 50%;
 }
 
