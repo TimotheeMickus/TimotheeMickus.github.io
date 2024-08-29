@@ -140,7 +140,6 @@ blockquote {
 .square {
   aspect-ratio: 1/1;
   flex: 0 1 50%;
-  background-color: blue;
   margin: 10px;
   /*max-width: 25%;*/
   border: solid black 2px;
