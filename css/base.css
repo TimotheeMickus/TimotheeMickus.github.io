@@ -134,13 +134,17 @@ blockquote {
  flex-direction: row;
  justify-content: center;
  align-items: center;
+ flex-wrap: wrap;
 }
 
 .square {
- aspect-ratio: 1/1;
- flex: 0 1 55px;
- background-color: blue;
- margin: 10px;
- max-wdiths: 50%;
+  aspect-ratio: 1/1;
+  flex: 0 1 50%;
+  background-color: blue;
+  margin: 10px;
+  /*max-width: 25%;*/
+  border: solid black 2px;
+  border-radius: 15px;
+  padding: 10px;
 }
 
