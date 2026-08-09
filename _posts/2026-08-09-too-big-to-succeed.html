@@ -6,101 +6,279 @@ date: 2026-08-09
 excerpt_separator: <!--more-->
 ---
 <p>
-  I haven't written anything on this blogpost over the last few years. Things have been <em>busy</em>, and this blog was really meant as an explainer of my PhD for my folks. Not that there wasn't a lot to talk about. Let's talk about NLP.
+  I haven't written anything on this blogpost over the last few years.
+  Things have been <em>busy</em>, and this blog was really meant as an explainer of my PhD for my folks. 
+  Not that there wasn't a lot to talk about. 
+  Let's talk about NLP.
 </p>
 <!--more-->
 <aside class="">
-  <b>Note:</b>I won't be making much of an effort to make this post broadly accessible to non-expert people. This time, the topic is really a lot of inside baseball; moreover, I don't have it in me to polish this. So what you get is a barely edited wall of text. Sorry not sorry.
+  <b>Note:</b>I won't be making much of an effort to make this post broadly accessible to non-expert people. 
+  This time, the topic is really a lot of inside baseball; moreover, I don't have it in me to polish this. 
+  So what you get is a barely edited wall of text.
+  Sorry not sorry.
 </aside>
 
 <h3><tt>Too big to succeed</tt></h3>
 <p>
-I was at ACL in San Diego last month. Part of my reasons to go was that we had a paper in, part of it was that my postdoc was coming to an end and I had vague hopes to network; part of it was that it's always nice to have an excuse to visit the family in California. 
+  I was at ACL in San Diego last month. 
+  Part of my reasons to go was that we had a paper in, part of it was that my postdoc was coming to an end and I had vaguely hoped to network; part of it was that it's always nice to have an excuse to visit the family in California. 
 </p>
 <p>
-ACL has always been the premier venue in NLP, the big one. But "big one" is selling it short at this point. We're talking around 5000 papers and even more attendees. This year didn't necessarily feel the most crowded, because the venue was large enough (<i>memento Toronto</i>), but it felt needlessly big. Pick two attendees at random, and there probably isn't one oral session they've both been to. At this point, ACL is big enough for people to only be exposed to one narrow topic if they choose to. And yet, I also struggled to find anyhting that was really interesting to me. It ended up being a lot of noise and very little signal.
+  ACL has always been the premier venue in NLP, the big one. 
+  But "big one" is selling it short at this point. 
+  We're talking around 5000 papers and even more attendees. 
+  This year didn't necessarily feel the most crowded, because the venue was large enough (<i>memento Toronto</i>), but it felt needlessly big. 
+  Pick two attendees at random, and there probably isn't one oral session they've both been to. 
+  At this point, ACL is big enough for people to only be exposed to one narrow topic if they choose to. 
+  And yet, I also struggled to find anything that was really interesting to me. 
+  It ended up being a lot of noise and very little signal.
 </p>
 <p>
-At what point is a conference too big?
+  At what point is a conference too big?
 </p>
 <p>
-That begs the question of "too big <em>for what</em>?" So perhaps a good question to start with is "what is a conference for?" I don't have an answer to that, and it's probably one of these questions where the answer basically depends on who you ask. As for as I'm concerned, I'm seeing three related goals: meeting new people; discovering stuff; getting feedback.
+  That begs the question of "too big <em>for what</em>?" 
+  So perhaps a good question to start with is "what is a conference for?" 
+  I don't have an answer to that, and it's probably one of these questions where the answer basically depends on who you ask. 
+  As far as I'm concerned, I'm seeing three related goals: meeting new people; discovering stuff; getting feedback.
 </p>
 <p>
-You don't meet new people in a conference with 5000 papers. Or perhaps I should say it's been way easier for me to talk to strangers in much smaller groups. 100 people in a building is already exhausting, but at least it's manageable. In a small conference, you go to the poster sessions and discover new researchers, young and old, that work on topics you cared enough about to go to said small conference; you'll see the same faces again a few times, and by the end of the event you should at least have gotten a general vibe of who works on what ― and especially whether any of those new faces work on topics you also work on. However many we were at ACL, it stopped being a matter of that. Faces blur, you're barely able to remember whose work you saw, and the few new acquaintances you make, you mostly make by meeting them in social situationsat the periphery of the conference. They're friends of friends, or colleagues of colleagues, or acquaintances of acquaintances. At least that's how it went for me. 
+  You don't meet new people in a conference with 5000 papers. 
+  Or perhaps I should say it's been way easier for me to talk to strangers in much smaller groups. 
+  100 people in a building is already exhausting, but at least it's manageable. 
+  In a small conference, you go to the poster sessions and discover new researchers, young and old, that work on topics you cared enough about to go to said small conference; you'll see the same faces again a few times, and by the end of the event you should at least have gotten a general vibe of who works on what ― and especially whether any of those new faces work on topics you also work on. 
+  However many we were at ACL, it stopped being a matter of that. 
+  Faces blur, you're barely able to remember whose work you saw, and the few new acquaintances you make, you mostly make by meeting them in social situations in the periphery of the conference. 
+  They're friends of friends, or colleagues of colleagues, or acquaintances of acquaintances. 
+  At least that's how it went for me. 
 </p>
 <p>
-That brings me to the "discovering stuff." I think it's pretty obvious how meeting a random stranger in a bar whose work is barely relevant to yours (and who is way too tired after spending a full day at a conference) isn't exactly conducive to them presenting you with new ideas or novel ways of thinking about topics you're interested in. It's not like they owe you that, of course. But I couldn't help but ask myself what I was doing there, halfway across the world. I sure wasn't there for new science. And if I did find some new science, I stumbled on it by accident. Of course, I could've prepped my ACL conference like I used to prep my trip to JapanExpo as a teen in Paris, and plan out which events I wanted to attend and all that. But good conferences for me are those were I get exposed to things I would not think to look up otherwise. Prepping a conf feels like it's just an expensive, exhausting, yet non-exhaustive literature review — and honestly, I could just riffle through the list of accepted papers instead. What I got from ACL was a constant headache from trying to force myself to go through the poster sessions, a couple of meh papers, and a lot of dubious merch (more on that later).
+  That brings me to the "discovering stuff." 
+  I think it's pretty obvious how meeting a random stranger in a bar whose work is barely relevant to yours (and who is way too tired after spending a full day at a conference) isn't exactly conducive to them presenting you with new ideas or novel ways of thinking about topics you're interested in.
+  It's not like they owe you that, of course. 
+  But I couldn't help but ask myself what I was doing there, halfway across the world. 
+  I sure wasn't there for new science. 
+  And if I did find some new science, I stumbled on it by accident. 
+  Of course, I could've prepped my ACL conference like I used to prep my trip to JapanExpo as a teen in Paris, and plan out which events I wanted to attend and all that. 
+  But for me, good conferences are those were I get exposed to things I would not think to look up otherwise. 
+  Prepping a conf feels like it's just an expensive, exhausting, yet non-exhaustive literature review — and honestly, I could just riffle through the list of accepted papers instead. 
+  What I got from ACL was a constant headache from trying to force myself to go through the poster sessions, a couple of meh papers, and a lot of dubious merch (more on that later).
 </p>
 <p>
-And what about getting feedback on my own work? well, if I struggle to find anything that I care about, I guess you won't be surprised to hear that the haul was very meager there as well. 
-In fairness, I did meet one person whose work was tangentially related to one of my research topic, although it was someone looking at an acquantaince's colleague's poster during a workshop. Workshops are always a lot more valuable than the main conference. (I'm more than happy to confirm this was the case at ACL as well. I wish we had more workshops as standalone events, rather than having to juggle through between 5+ mini-conferences held in parallel.) As for our main conference submission, I got the poster treatment, which means shouting at the top of your lungs for a 2+ hour session for intrigued passerbys. A lot of them are less burned-out than I am, and probably got something out of my work (or at least I hope so). But in fairness, almost none of them had anything insighful to say about the work. In a very selfish sense, I didn't get anything out of presenting my poster beyond mere exposure.
+  And what about getting feedback on my own work? 
+  Well, if I struggle to find anything that I care to learn about, I guess you won't be surprised to hear that the haul was very meager there as well. 
+  In fairness, I did meet one person whose work was tangentially related to one of my research topics, although it was someone looking at an acquantaince's colleague's poster during a workshop. 
+  Workshops are always a lot more valuable than the main conference. 
+  (I wish we had more workshops as standalone events, rather than having to juggle through between 5+ mini-conferences held in parallel.) 
+  As for our main conference submission, I got the poster treatment, which means shouting at the top of your lungs for a 2+ hour session in the hope of intriguing passerbys. 
+  A lot of my audience was probably less burned-out than I am, and probably got something out of my work (or at least I hope so). 
+  But in fairness, almost none of them had anything insighful to say about the work. 
+  In a very selfish sense, I didn't get anything out of presenting my poster beyond mere exposure.
 </p>
 <h3><tt>Giving up on ARR</tt></h3>
 <p>
-That last point, the lack of feedback, compounds with the lack of feedback we get during the review process. I blame ARR. On paper, ARR sounds like a great idea. In practice, it is a concrete application of the saying "the road to hell is paved with good intentions." I am starting to hate ARR with an ardor that is likely becoming symptomatic of a mental health breakdown. So this is probably even less of an impartial account, but I do think it's worth penning down. At the very least I'll get to revisit my opinion of it later, when I'm less tired and burned out.
+  That last point, the lack of feedback, compounds with the lack of feedback we get during the review process. 
+  On paper, ARR sounds like a great idea. 
+  In practice, it is a concrete test of good intentions as a pavement solution for a new route to Hell.
+  I am starting to hate ARR with an ardor that is likely becoming symptomatic of a mental health breakdown. 
+  So this is probably even less of an impartial account, but I do think it's worth penning down. 
+  At the very least I'll get to revisit my opinion of it later, when I'm less tired and burned out.
 </p>
 <p>
-The first thing to point out is that the reviews we get from ARR are usually uninspired. Don't get me wrong, there are good reviews, and it totally happens for some papers to luck out and get three solid reviews (including negative ones). On the other hand, it is also very frequent for papers to get three unhelpful reviews. As an AC, those cases tend to be frustrating, bevause you basically need to stretch the very limited material you got into useful feedback. That means reading the paper and essentially reviewing from scratch, so that you can expand on the few bullet points you get to make an actual comment about what (if anything) needs to be fixed. As an author, it's beyond frustrating.
+  The first thing to point out is that the reviews we get from ARR are usually uninspired. 
+  Don't get me wrong, there are good reviews, and it totally happens for some papers to luck out and get three solid reviews. 
+  On the other hand, it is also very frequent for papers to get three unhelpful reviews that list three bullet points as weakness, one of which is "test on more models." 
+  As an AC, those cases tend to be frustrating, bevause you basically need to stretch the very limited material you got into useful feedback. 
+  That means reading the paper and essentially reviewing from scratch, so that you can expand on the few bullet points you get to make an actual comment about what (if anything) needs to be fixed. 
+  As an author, it's beyond frustrating.
 </p>
 <p>
-I think we need to be clear about why a sizeable number of reviews feel like that. Part of it is the time ARR gives to reviewers (about two weeks) vs. the workload they get (4 to 6 papers, depending). Let's keep in mind this is <em>community work</em>, meaning people have actual jobs they still need to do besides the reviewing load. Teaching and supervision don't magically go away for two weeks. You still have students with other projects and they're trying to make it to the next ARR cycle, or some other venue. Let's assume generously that it takes an hour and a half to review one paper, from your first read to publishing your comments. Even then, that's already 10% of the time you're supposed to work in these two weeks that just vanishes into ARR. And let me stress: the operative keywords here are "assume generously."
+  I think we need to be clear about why a sizeable number of reviews feel that shallow. 
+  Part of it is the time ARR gives to reviewers (about two weeks) vs. the workload they get (4 to 6 papers, depending). 
+  Let's keep in mind this is <em>community work</em>, meaning people have actual jobs they still need to do besides the reviewing load. 
+  Teaching and supervision don't magically go away for two weeks. 
+  You still have students with other projects and <em>they</em> are trying to make it to the next ARR cycle or some other venue with an urgent deadline. 
+  Let's assume generously that it takes an hour and a half to review one paper, from your first read to publishing your comments. 
+  Even then, that's already 10% of the time you're supposed to work in these two weeks that just vanishes into ARR. 
+  And let me stress: the operative keywords here are "assume generously."
 </p>
 <p>
-So unsurprisingly, many people will shirk what they can and half-ass the rest. I don't think half of the reviewers from the last ARR cycle I got as an AC  bothered to fill in their checklists. Many reviews end up being a matter of vibes, rather than digging deep in the specific of the papers at hand. I'm not even touching the common accusation of LLM-assisted reviews, but that's also in the landscape. And again, I don't want to say that all reviews are bad; I just want to point out that the quality is generally not great, or not as great as it could be if we gave reviewers the means to do their jobs properly. Right now, all we have are negative incentives. Tied to that, we also don't have any training materials for new reviewers, and a <em>lot</em> of them are junior.
+  So unsurprisingly, many people will shirk what they can and half-ass what they can't. 
+  I don't think half of the reviewers from the last ARR cycle I got as an AC  bothered to fill in their checklists.
+  Many reviews end up being a matter of vibes, rather than digging deep in the specifics of the papers at hand. 
+  I'm not even touching the common accusation of LLM-assisted reviews, but that's also in the landscape. 
+  And again, I don't want to say that all reviews are bad; I just want to point out that the quality is generally not great, or not as great as it could be if we gave reviewers the means to do their jobs properly. 
+  Right now, all we have are negative incentives. 
+  Tied to that, we also don't have any training materials for new reviewers, and a <em>lot</em> of them are junior.
 </p>
 <p>
-What's especially annoying is that ARR specifically has a lot of redundant work trying to solve for way too many conflicting requirements. It has sticky reviews with revision PDFs, but it also has a rebuttal phase (so two different mechanisms to allow a back and forth between authors and reviewers). It requires that four different people go through a checklist of formalities, including checking whether the template looks okay manually. It has desk rejections and overturning of desk rejections if the higher ups decided they decided wrong. It has neverending discussion phases where none of the reviewers will interact and authors will compete in Faulknerian Olympics, and encouragements to keep it short but also engage in that discussion. It has cycles tied to conferences which end up overcrowded, and off-conference cycles that are only here for the sake of pretending the thing isn't tied to a specific conference. From what I can tell, all of this redundancy likely stems from an institutional decision to try and make ARR author-friendly. But at what cost? Good reviews come at a premium. Do we want to be a community that publishes a lot, or do we want to be a community that values reviewing?
+  What's especially annoying is that ARR specifically asks for a lot of redundant work, because it's trying to solve for way too many conflicting requirements. 
+  It has sticky reviews with revision PDFs, but it also has a rebuttal phase, i.e., two different mechanisms to allow a back and forth between authors and reviewers. 
+  It requires that four different people manually go through a checklist of formalities, including checking whether the template looks like it's been tempered with. 
+  It has desk rejections and overturning of desk rejections if the higher ups decided they decided wrong. 
+  It has neverending discussion phases where none of the reviewers will interact and authors will compete in Faulknerian Olympics, and encouragements to keep it short but also engage in that discussion. 
+  It has cycles tied to conferences which end up overcrowded, and off-conference cycles that are only here for the sake of pretending the thing isn't tied to a specific conference. 
+  From what I can tell, all of this redundancy likely stems from an institutional decision to try and make ARR author-friendly. 
+  But at what cost? 
+  Good reviews come at a premium. 
+  Do we want to be a community that publishes a lot, or do we want to be a community that values reviewing?
 </p>
 <p>
-And then we're faced with crises. We ACs were asked to metareview 15 papers in that last cycle, because we had an unforeseen explosion of submissions where no one was qualified. As an AC, you also get the enviable postion of being a middle manager, where you get to adjudicate the authors' complaints on top of getting slammed by a pile of mail from higher ups, reminding you to go chase late reviewers, or find emergency reviewers (tacitly, that means annoying people in your own social circle to try to get them to help out just one more time please please <em>please</em>), or jump through all the other adminsitrative hoops people are asking you for. And because ARR is the mess that it is, the higher-ups come from two different branches that don't always talk to one another: concretely, for EMNLP, at a time when we were supposed to be busy with hounding late reviews, we were asked to review the output from a fabricated reference detector (what they call "hallucinated references"). On my side, virtually everything flagged by the system was false positives; but more to the point, that was a huge ask to do a fine-grained combing-through of the entire bibliography of 15 different papers at a time when we had other shit to handle. 
+  And then we're faced with crises. 
+  We ACs were asked to metareview 15 papers in that last cycle, because we had an unforeseen explosion of submissions where no one was qualified. 
+  As an AC, you also get the enviable postion of being a middle manager, where you get to adjudicate the authors' complaints.
+  At the same time, you're slammed by a pile of mail from higher-ups reminding you to go chase late reviewers, or find emergency reviewers (tacitly, that means annoying people in your own social circle to try to get them to help out just one more time please please <em>please</em>), or jump through a number of varied adminsitrative hoops. 
+  And because ARR is the mess that it is, the higher-ups come from two different branches that don't always talk to one another.
+  To take a concrete example, for EMNLP, at a time when we were supposed to be busy with harassing late reviewers, we were asked to review the output from a fabricated reference detector (what they call "hallucinated references"). 
+  On my side, virtually everything flagged by the system was false positives; but more to the point, that was a huge ask: to do a fine-grained combing-through of the entire bibliography of 15 different papers, at a time when we had other shit to handle. 
 </p>
 <p>
-All of that is even less bareable that ARR always assumes that you only review at ARR. I'm <em>also</em> a reviewer for CL and TACL and TMLR and (occasinally) NeurIPS and ICML and so on. I'm <em>also</em> a reviewer for half a dozen workshops, some of which at this point I find genuinely more valuable than the main conference. I'm <em>also</em> (depending on the year, admittedly) an organizer for workshops, shared tasks or summer schools. Not everything that is done in the NLP community goes through ARR, and ARR is by far the place that asks the most out of me.
+  All of that is even less bareable that ARR always assumes that you only review at ARR. 
+  I'm <em>also</em> a reviewer for CL and TACL and TMLR and (occasinally) NeurIPS and ICML and so on. 
+  I'm <em>also</em> a reviewer for half a dozen workshops, some of which at this point I find genuinely more valuable than the main conference. 
+  I'm <em>also</em> (depending on the year, admittedly) an organizer for workshops, shared tasks or summer schools. 
+  Not everything that is done in the NLP community goes through ARR, and ARR is by far the place that asks the most out of me.
+  ARR mandates that you give back the reviews you request from it, but it never acknowledges all the other stuff you do for this community.
 </p>
 <p>
-If you've been at ACL, you know where this is going. One of the big talking points at the business meeting (and at most plenary sessions during the conference, really) was that our reviewing system is broken. ARR head honchos suggested setting up a lottery as to which newcomers get their publication reviewed (among other possible initiatives, but clearly that was the main suggestion being pushed for). On the one hand, I do want to salute people showing up with proposals to solve what is clearly a problem. On the other hand, I think it's pretty obvious that we have a deep cultural problem here, if that's how we treat scientific review. A lottery ticket for what is at best a mid attempt at checking the validity of the work is kind of absurd, since we're letting randomness weed out a solid chunk of papers that should be published. What's the goal of this reviewing process exactly?
+  If you've been at ACL, you know where this is going.
+  One of the big talking points at the business meeting (and at most plenary sessions during the conference, really) was that our reviewing system is broken. 
+  Some ARR head honchos suggested setting up a lottery to decide which newcomers get their publication reviewed (among other possible initiatives, but clearly that was the main suggestion being pushed for). 
+  On the one hand, I do want to salute people showing up with proposals to solve what is clearly a problem. 
+  On the other hand, I think it's pretty obvious that we have a deep cultural problem here, if that's how we treat scientific review. 
+  A lottery ticket for what is at best a mid attempt at checking the validity of the work is kind of absurd, since we're letting randomness weed out a solid chunk of papers that should be published. 
+  What's the goal of this reviewing process exactly?
 </p>
 <p>
-I'm not in a position of shaping how ARR moves and where it goes. Still, I don't want this to be purely a rant, so here are my two cents. First, we should cut down the redudant work. Drop the rebuttal, since we have sticky reviews that already do this job. Make the reviewing process longer, to disincentivize casual submissions and lessen the burden on the reviewers. Tie cycles to specific conference: not only to make sure that no one is working purely for the sake of offering feedback on something that will still need to go through yet another cycle, but also to simplify everyone's life. Automate the checklist as much as you can. Force submissions out of the ARR cycles when they get good enough reviews or bad enough reviews. That won't solve the fundamental problem, but it's a better start than a lottery.
+  I'm not in a position of shaping how ARR moves and where it goes. 
+  Still, I don't want this to be purely a rant, so here are my two cents. 
+  First, we should cut down the redudant work. 
+  Drop the rebuttal, since we have sticky reviews that already do this job and they force us to rush our reviews. 
+  Make the reviewing process longer to disincentivize casual submissions and lessen the burden on the reviewers. 
+  Tie cycles to specific conference: we shouldn't give feedback on something that will definitely need to go through yet another cycle. 
+  Automate the checklist as much as you can. 
+  Force submissions out of the ARR cycles when they get good enough reviews or bad enough reviews. 
+  That won't solve the fundamental problem, but it's a better start than a lottery.
 </p>
 <p>
-As for myself, I'll be avoiding ARR as much as I can. I know my students will still submit there occasionally, but I've already started encouraging them to favor non-archival submissions to workshops and publications in journals over ARR. 
+  As for myself, I'll be avoiding ARR as the plague that it is. 
+  I know my students will still submit there occasionally and so I'll have my name forced on ARR subs.
+  I've already started encouraging co-authors to favor non-archival submissions to workshops, and publications in journals down the line. 
 </p>
 <h3><tt>Money, money, money</tt></h3>
 <p>
-In all honesty, I don't think the direction that ARR will take will be one I agree with. Part of the problem is the deep interest of industry in our field. Right now, of course, the LLM/AI boom is still going, and all the big tech companies want a slice of the pie. But we've always had industry around. One of the first machine translation systems was a collaboraiton between Georgetown University and IBM. I'm willing to hear that at its core, NLP is an applied science, and so it might make sense for commercially oriented folks to keep an eye out on this field, and perhaps help it along. But computational linguistics (if you make that distinction) isn't. It's also interesting to highlight that this omnipresence is rarely questioned: ACL 2026 had a panel on industry vs academia, were all the panelists openly had ties to the industry, and none of them were known to be critical of industry. I do think it's pretty important for us to have voices that are less enthusiastic. One of the pieces of merch I got at the conference was the spine of a book that had been cut off to make it easier to scan its pages. To put things plainly, the business model of one of the sponsors of this conference is the physical destruction of scientific books. To put it dramatically, our cozy coffee breaks are paid for through capitalist autodafés. I think more people should be shocked by this. 
+In all honesty, I don't think the direction that ARR will take will be one I agree with. 
+  Part of the problem is the deep interest of industry in our field, which favors short cycles and convenient conferences to submit to. 
+  Right now, of course, the LLM/AI boom is still going, and all the big tech companies want a slice of the pie. 
+  But we've always had industry around. 
+  One of the first machine translation systems was a collaboration between Georgetown University and IBM. 
+  I'm willing to hear that at its core, NLP is an applied science, and so that it might make sense for commercially oriented folks to keep an eye out on this field, and perhaps help it along. 
+  But computational linguistics (if you make that distinction) isn't. 
+  It's also interesting to highlight that this omnipresence is rarely questioned. 
+  ACL 2026 had a panel on industry vs academia, were all the panelists openly had ties to the industry, and none of them were known to be critical of industry. 
+  I do think it's pretty important for us to have voices that are less enthusiastic. 
+  One of the pieces of merch I got at the conference was the spine of a book that had been cut off to make it easier to scan its pages. 
+  To put things plainly, the business model of one of the sponsors of this conference is the physical destruction of scientific books. 
+  To put it dramatically, our cozy coffee breaks are paid for through capitalist autodafés. 
+  I think more people should be shocked by this. 
 </p>
 <p>
-Yet, at this point, I'm doubtful our conferences could function without industry money coming in — or they'd need to have higher registration fees to keep everything on the same scale. For ACL 2025, the figure I get is <a href="https://www.aclweb.org/adminwiki/index.php?title=2025Q3_Reports:_Sponsorship_Chairs">close to $800,000</a>. Let's do some back of the envelope computations: given an attendance of 6,000 people, and registration fees ranging from $1,200 to $300, that means that the sponsorship accounted for 10–30% of the revenue. That's a lot of uncertainty and a lot of rounding I'm doing, but my point is that industry money makes up a substantial portion of the conference budget.
+  Yet, at this point, I'm doubtful our conferences could function without industry money coming in — or they'd need to have higher registration fees to keep everything on the same scale. 
+  For ACL 2025, the figure I get is <a href="https://www.aclweb.org/adminwiki/index.php?title=2025Q3_Reports:_Sponsorship_Chairs">close to $800,000</a>. 
+  Let's do some back of the envelope computations: given an attendance of 6,000 people, and registration fees ranging from $1,200 to $300, that means that the sponsorship accounted for 10–30% of the revenue. 
+  That's a lot of uncertainty and a lot of rounding I'm doing, but my point is that industry money makes up a siseable portion of the conference budget.
 </p>
 <aside>
-Side note: I really wouldn't mind my scientific association being transparent about their financial records, instead of having to guestimate. And yes, this document lists two different currencies for this 800K-ish pile of cash. If you have more exact numbers, please share.
+  <b>Side note:</b> I really wouldn't mind the scientific association I pay dues to being more transparent about their financial records, instead of having to guestimate. 
+  And yes, this document lists two different currencies for this 800K-ish pile of cash. 
+  If you have more exact numbers, please share.
 </aside>
 <p>
-There are consequences to the omnipresence of BigTech™ in our conferences. You go to ACL and visit an industry booth where they'll advertise internship opportunities, which will give you the right project to write a short paper on some piece of tech that serves the agenda of the company that gave you your internship. There will be resources thrown at making this project successful. Conversely, topics that don't interest industry actors will get a much harder time, given they will have access to fewer resources, but also fewer reviewers interested in the topic (since we ask authors to also review for the conference). That's how you get an overwhelming amount of works focusing on English and (if you're lucky) Mandarin Chinese. It's also worth pointing out that this plays into what we deem valuable (projects that have a lot of resources thrown at them are more likely to get awards, simply because they can afford to be more thorough with their science, run their experiments at a more impressive scale, etc). And that plays beyond the languages for which we build technology: even the topics are influenced. Right now, a lot of the industry sector is interested in agentic workflows and reasoning and long-horizion tasks, and therefore a lot of what was presented at the conference targeted these questions. On my side, I am having severe cognitive dissonance as to whether we should work on finding ways to destroy books and use supercomputers to write business emails for you. That certainly doesn't feel like what I initially signed up for, at the start of my PhD. 
+  There are consequences to the omnipresence of BigTech™ in our conferences. 
+  You go to ACL and visit an industry booth where they'll advertise internship opportunities, which will give you the right project to write a short paper on some piece of tech that serves the agenda of the company that gave you your internship.
+  There will be resources thrown at making this project successful. 
+  Conversely, topics that don't interest industry actors will get a much harder time, given they will have access to fewer resources, but also fewer reviewers interested in the topic to start with (since we ask authors to also review for the conference). 
+  That's how you get an overwhelming amount of works focusing on English and (if you're lucky) Mandarin Chinese. 
+  It's also worth pointing out that this plays into what we deem valuable.
+  Projects that have a lot of resources thrown at them are more likely to get awards, simply because they can afford to be more thorough with their science, run their experiments at a more impressive scale, etc. 
+  And that plays beyond the languages for which we build technology: even the topics are influenced. 
+  Right now, a lot of the industry sector is interested in agentic workflows and reasoning and long-horizion tasks, and therefore a lot of what was presented at the conference targeted these questions. 
+  On my side, I am having severe cognitive dissonance as to whether we should work on finding novel ways to destroy books and using supercomputer time for the glorious purpose of write business emails so that you don't have. 
+  No kink-shaming, but that certainly doesn't feel like what I initially signed up for, at the start of my PhD. 
 </p>
 <p>
-Another consequence of this is that we depend on the good graces of industry (or at least it looks like we do). If industry leaves, we're cooked (or at least a lot of decision-makers seem to think so). And that feeds in another paranoia I've heard from decision makers: the fear of not growing enough. I've literally heard that at business meetings, despite the year-on-year record attendance numbers. Some of the people who climbed up the political ladder really fear ACL and EMNLP becoming a B-tier machine learning conference. I would candidly offer we're already there. Virtually anything you could submit to ACL, you could also submit to NeurIPS or ICML or ICLR, whereas the converse isn't true. We're a subset of ML, and that makes us a less prestigious ML conference than the more generic ones.
+  Another consequence of this is that we depend on the good graces of industry (or at least some decision-makers think we do). 
+  And that feeds in another paranoia I've heard from decision makers: the fear of not growing enough. 
+  I've literally heard that at business meetings, despite the year-on-year record attendance numbers. 
+  Some of the people who climbed up the political ladder really fear that ACL and EMNLP will become a B-tier ML conference. 
+  I would candidly offer we're already there. 
+  Virtually anything you could submit to ACL, you could also submit to NeurIPS or ICML or ICLR, whereas the converse isn't true. 
+  We're a subset of ML, and that makes us a less prestigious ML conference than the more generic ones.
 </p>
 <h3><tt>Now what?</tt></h3>
-<p>As I said, I'm trying to be more constructive than bitter. I am of course bitter. ACL 2026 has felt like a clear confirmation that this is no longer my community, on many levels. Things that I could put up in the past don't feel like they're worth the effort anymore. I don't have great solutions. I have some, but I don't have a miracle wand that will make things better. I still think it's worth articulating what we can do concretely, otherwise we're left with a simple and sterile diagnosis of the current "success catastrophy", to borrow the words from Resnik's keynote. 
+<p>
+  As I said, I'm trying to be more constructive than bitter. 
+  I am of course bitter. 
+  ACL 2026 has felt like a clear confirmation that this is no longer my community, on many levels. 
+  Things that I could put up in the past don't feel like they're worth the effort anymore. 
+  I don't have great solutions. 
+  I have some, but I don't have a miracle wand that will make things better. 
+  I still think it's worth articulating what we can do concretely, otherwise we're left with a simple and sterile diagnosis of the current "success catastrophy", to borrow words from Resnik's keynote. 
 </p>
 <p>
-My first point is that I think we should move away from viewing conferences as our primary mode of scientific communication. Journals seem a lot a more appealing. There are a lot of options, ranging from some that are core to our field, like TACL, CL, LREV... to some that are more clearly ML-oriented, like TMLR, to all those that exist in linguistics and beyond. My limited experience with journals is that they also have better reviewers and reviews, and force you to adopt a slower pace of research output. Fewer papers means conclusions are much more secure, much more thorough, and much more useful. Coincidentally, that also means staying away from ARR, which I think is a good way of preserving your physical and mental health.
+  My first point is that I think we should move away from viewing conferences as our primary mode of scientific communication. 
+  Journals seem a lot a more appealing. 
+  There are a lot of options, ranging from some that are core to our field, like TACL, CL, LREV... to some that are more clearly ML-oriented, like TMLR, to all those that exist in linguistics and beyond. 
+  My limited experience with journals is that they also have better reviewers and reviews, and force you to adopt a slower pace of research output. 
+  Fewer papers means higher standards.
+  It means conclusions are much more secure, much more thorough, and much more useful. 
+  Coincidentally, that also means staying away from ARR, which I think is a good way of preserving your physical and mental health.
 </p>
 <p>
-My second point is that big conferences are not a place for you to socialize. They function primarily as status symbols, points you collect to level up your grant applications, your CV or whatever else you care about. It's hard to overturn these kinds of deep-rooted, systematic biases in favor of the big venues. But don't go there with the expectation of meeting new people. For that, you should target the smaller venues whose topics match with your interests and your own work. If you're in a position to do, make smaller venues, and incentivize participation for its own sake:  drop registration fees, encourage non-archival submissions, have a dedicated person in charge of organizing social activites.
+  My second point is that big conferences are not a place for you to socialize. 
+  They function primarily as status symbols.
+  They're points you collect to level up your grant applications, your CV, or whatever else your grant-giving institution cares about. 
+  It's hard to overturn these kinds of deep-rooted, systemic biases in favor of the big trafitional venues. 
+  But don't go there with the expectation of meeting new people. 
+  For that, you should target the smaller venues whose topics match with your interests and your own work. 
+  If you're in a position to do, make smaller venues, and incentivize participation for its own sake.  
+  Drop registration fees, encourage non-archival submissions, have a dedicated person in charge of organizing social activites, make the whole event single-track.
 </p>
 <p>
-Third is normalizing being pissed off by all this. You should be pissed off that higher ups always ask more free work from you, and yet still actively work to make this machine bigger at a point where we're all strecthed beyond reason. You should be pissed off by prizes and awards that recompense coming from well-funded, visible institutions. You should be pissed off that you can't use an emdash without thinking five times about it anymore. You should be pissed off by which company is asked to sponsor our conferences, and what these companies do. You should be pissed off by reviewers asking you to compare your thing to the latest and biggest new toy from industry when it brings nothing to your argument. You should not take the current state of affairs as a given and carry on as if it doesn't matter to you. 
+  Third is normalizing being pissed off by all this. 
+  You should be pissed off that higher-ups always ask more free work from you, and yet still actively work to make this machine bigger, at a point where we're all stretched beyond reason. 
+  You should be pissed off by prizes and awards that recompense coming from well-funded, visible institutions. 
+  You should be pissed off that you can't use an emdash without thinking five times about it anymore. 
+  You should be pissed off by which company is sponsoring our conferences, and what these companies do. 
+  You should be pissed off by reviewers asking you to compare your thing to the latest and biggest new toy from industry when it brings nothing to your argument. 
+  You should not take the current state of affairs as a given and carry on as if it doesn't matter to you. 
 </p>
 <p>
-Fourth: keep in mind that you have power. I'm in the fortunate position that I will get to make decisions about hiring new PhD students. My first project with some serious funding is slated to start in a month, which means I get to set an agenda and find the right people. But that also means I have access to funding for organizing and supporting local events, which I think is something that matters. Conversely, there's not a lot I can do about ARR besides boycotting it. The same logic applies to other people in other places. Not everyone has the means and the power to effect change in their communities, unfortunately. PhD students likely can't do a lot more beyond arguing against ARR, and trying their luck at workshop. But even that depends on the lab one is in (there are PIs that are actively against publishing in workshops, after all). I'm still a huge believer in <em>being the person you wish had been around</em>: take note of what you wish you could change, and change it whenever you can.
+  Fourth: keep in mind that you (will) have power. 
+  I'm in the fortunate position that I will get to make decisions about hiring new PhD students. 
+  My first project with some serious funding is slated to start in a month. 
+  That also means I have access to funding for organizing and supporting local events. 
+  I think that matters, and I plan to do so.
+  Conversely, there's not a lot I can do about ARR besides boycotting it. 
+  The same logic applies to other people in other places. 
+  Not everyone has the means and the power to effect change in their communities, unfortunately. 
+  PhD students likely can't do a lot more beyond arguing against ARR, and trying their luck at workshops. 
+  But even that depends on the lab one is in. 
+  (There are PIs that are actively against publishing in workshops, after all.) 
+  I'm still a huge believer in <em>being the person you wish had been around</em>: take note of what you wish you could change, and change it whenever you can.
 </p>
 <p>
-I know this advice isn't perfect. I'm just an internet rando with a blog and a burnout. I do intend to put my money where my mouth is; I've tried to build spaces for the communities I care about (clumsily, and that's still a work in progress); I'm actively reconsidering where I publish; I'm certainly pissed off. It's also a reason why this rant is being published: that way, there is some trace of where I'm at now, so that I can check in five years how I've progressed.
+  I know this advice isn't perfect. 
+  I'm just an internet rando with a blog and a burnout. 
+  I do intend to put my money where my mouth is. 
+  I've tried to build spaces for the communities I care about (clumsily, and that's still a work in progress). 
+  I'm actively reconsidering where I publish. 
+  I'm certainly pissed off. 
+  It's also a reason why this rant is being published: that way, there is some trace of where I'm at now, so that I can check in five years how I've progressed.
 </p>
 <p>
-If you made it this far — thanks, I guess? TBH, I'm not sure why you've inflicted that upon yourself, but I'd be glad if you could share this with like-minded folks and share their thoughts back to me.  Good luck out there.
+  If you made it this far — thanks, I guess? 
+  TBH, I'm not sure why you've inflicted that upon yourself, but I'd be glad if you could share this with like-minded folks and share their thoughts back to me.
+  Good luck out there.
 </p>
